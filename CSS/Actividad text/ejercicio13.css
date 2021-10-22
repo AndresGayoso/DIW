@@ -25,7 +25,9 @@ img {
 #contenedor {
     width: 90%;
     max-width: 900px;
-    width: expression(document.body.clientWidth > 901? "900px":"auto");
+    color: black;
+    font: 0.9em Arial;
+    line-height: 1.4;
     margin: 0px auto;
 }
 
@@ -119,7 +121,7 @@ img {
 }
 
 #cabecera h1 {
-    background: url(./imagenes/logo.gif) no-repeat -5px -10px;
+    background: url(./imatges/logo.gif) no-repeat -5px -10px;
 }
 
 #cabecera h1 span {
@@ -128,8 +130,9 @@ img {
 
 #menu {
     margin-bottom: .5em;
+    margin-right: 1em;
     border-bottom: 1px solid #004C99;
-    background: url(./imagenes/fondo_menu.gif) repeat-x;
+    background: url(./imatges/fondo_menu.gif) repeat-x;
 }
 
 #contenido {
@@ -175,4 +178,51 @@ img {
     margin-top: 1em;
     border: 1px dashed #C60;
     background: #FFF6CD;
+}
+.articulo h2{
+    color: #CC6600;
+    font-size: 1.65em;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+}
+#menu a{
+    color: white;
+    font-size: 1.3em;
+    margin-right: 1em;
+}
+#lateral{
+    font-size: 0.9em;
+    color: #999;
+}
+#lateral .fecha{
+    color: #999;
+    padding-right: 60px;
+}
+#noticias h3{
+    color: #003366;
+}
+#publicidad{
+    color: #555;
+}
+#publicidad a{
+    color: #CC6600;
+}
+.articulo a{
+    color: #CC6600;
+}
+.articulo p{
+    margin-top: 0.3em;
+}
+#secundario h2{
+    color: white;
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#secundario{
+    height: 460px;
+}
+#pie{
+    color: #999;
+    font-size: 0.8em;
 }
