@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+ <title>Ejercicio posicionamiento float</title>
+<style type="text/css">
+    div{
+        border: 5px solid black;
+        padding: 5px;
+    }
+    .casa{
+        height: 400px;
+        width: 500px;
+        background-color: grey;
+        margin: 0 auto;
+        margin-top: 130px;
+    }
+    .tejado{
+        height: 100px;
+        width: 600px;
+        background-color: red;
+        margin-left: -50px;
+        margin-right: -50px;
+        margin-top: -130px;
+    }
+    .ventana{
+        height: 80px;
+        width: 80px;
+        background-color: blue;
+        float: left;
+        margin-left: 50px;
+        margin-top: -350px;
+    }
+    .ventana2{
+        height: 80px;
+        width: 80px;
+        background-color: blue;
+        float: right;
+        margin-right: 50px;
+        margin-top: -230px;
+    }
+    .puerta{
+        height: 100px;
+        width: 100px;
+        background-color: darkred;
+        margin: 0 auto;
+        margin-top: 280px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 70px;
+    }
+</style>
+</head>
+<body>
+    <div id="h1" class="casa">
+        <div class="tejado"> </div>
+        <div class="puerta"><h1>120</h1></div>
+        <div class="ventana"></div>
+        <div class="ventana2"></div>
+    </div>
+</body>
+</html>
