@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act2</title>
+    <link href="Act2.css" rel="stylesheet" type="text/css" />
+    <style>
+        div {
+            display: flex;
+            border: 3px solid black;
+            padding: 5px;
+        }
+
+        div.casa {
+            background-color: grey;
+            height: 200px;
+            width: 250px;
+            top: 300px;
+            left: 300px;
+            margin-left: 5em;
+        }
+
+        div.tejado {
+            width: 305px;
+            padding-top: 50px;
+            border: 3px solid black;
+            background-color: red;
+            margin-left: 3.5em;
+        }
+
+        div.puerta {
+            position: relative;
+            top: 142px;
+            left: 90px;
+            height: 50px;
+            width: 50px;
+            background-color: darkred;
+            font-size: small;
+        }
+
+        div.ventana {
+            background-color: blue;
+            position: relative;
+            top: 80px;
+            left: 120px;
+            height: 30px;
+            width: 30px;
+        }
+
+        div.ventana2 {
+            background-color: blue;
+            position: relative;
+            top: 10px;
+            left: -80px;
+            height: 30px;
+            width: 30px;
+        }
+        div h1{
+            position: relative;
+            top: 10px;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tejado"> </div>
+    <div id="h1" class="casa">
+        <div class="puerta">
+            <h1>120</h1>
+        </div>
+        <div class="ventana"></div>
+        <div class="ventana2"></div>
+    </div>
+</body>
+
+</html>
