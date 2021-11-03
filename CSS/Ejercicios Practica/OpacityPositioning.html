@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPACITY AND POSITIONING</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .first{
+            position: relative;
+            width: 1200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            left: 1200px;
+            background-color: rgb(128, 128, 128,0.2);
+        }
+        .second{
+            width: 1200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(128, 128, 128,0.4);
+        }
+        .third div p{
+            width: 1000px;
+            height: 50px;
+            margin: 0;
+            padding-top: 120px;
+            padding-left: 50px;
+            background-color: rgb(128, 128, 128,0.7);
+        }
+        .third .fifth{
+            position: absolute;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            top: 350px;
+            left: 400px;
+            border: 3px solid darkorange;
+            background-color: rgba(65, 65, 65, 0.7);
+        }
+        .fourth{
+            position: absolute;
+            left: 1150px;
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: rgb(128, 128, 128,1);
+        }
+    </style>
+</head>
+<body>
+    <h1>OPACITY AND POSITIONING</h1>
+    <br><br><br><br>
+    <br><br><br><br>
+    <p></p>
+    <div class="first">20% OPACITY</div>
+    <div class="second">40% OPACITY</div>
+    <div class="third">
+        <div class="fifth">70% OPACITY inner div</div><div><p>70% OPACITY</p></div>
+    </div>
+    <div class="fourth">DEFAULT OPACITY</div>
+</body>
+</html>
