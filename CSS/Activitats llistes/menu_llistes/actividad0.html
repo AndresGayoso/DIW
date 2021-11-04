@@ -1,42 +1,44 @@
 <html>
 <head>
 <style>
-
-
+div .tab1{
+  background-color: skyblue;
+}
 ul.menu {
-  border: 1px solid #7C7C7C;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 180px;
-  border-bottom: none;
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ width: max-content;
 }
-
 ul.menu li {
-  background: #F4F4F4;
-  border-bottom: 1px solid #7C7C7C;
-  border-top: 1px solid #FFF;
+ float: left;
+ width: max-content;
+ background: #F4F4F4;
 }
-
 ul.menu li a {
-  color: #333;
-  display: block;
-  padding: .2em 0 .2em .5em;
-  text-decoration: none;
+ border: 1px solid #7C7C7C;
+ border-radius: 15px;
+ color: #333;
+ display: block;
+ padding: .3em;
+ text-decoration: none;
 }
-
-
 
 </style>
 </head> 
 <body>
-<ul class="menu">
-  <li><a href="#">Elemento 1</a></li>
-  <li><a href="#">Elemento 2</a></li>
-  <li><a href="#">Elemento 3</a></li>
-  <li><a href="#">Elemento 4</a></li>
-  <li><a href="#">Elemento 5</a></li>
-  <li><a href="#">Elemento 6</a></li>
-</ul>
+  <div class="tab1">
+  <h2>Tab Menu</h2>
+  <ul class="menu">
+    <li><a href="#">Elemento 1</a></li>
+    <li><a href="#">Elemento 2</a></li>
+    <li><a href="#">Elemento 3</a></li>
+    <li><a href="#">Elemento 4</a></li>
+    <li><a href="#">Elemento 5</a></li>
+    <li><a href="#">Elemento 6</a></li>
+    <li><a href="#" style="border-right: none">Elemento 7</a></li>
+  </ul>
+  </div>
 </body>
 </html>
