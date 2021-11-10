@@ -21,31 +21,43 @@
             margin: .5em 0 0 0;
         }
         .btn {
-            width: 100px;
-            height: 25px;
+            position: relative;
+            width: 200px;
+            height: 50px;
             display: block;
             margin: 1em 0;
             color: white;
             background: #e35d71;
-            border: 1px solid #c04e65;
-            border-radius: 1px;
+            border: 2px solid #c04e65;
+            border-radius: 5px;
             border-bottom: 4px solid #c04e65;
             box-shadow: 
                 inset 0px 8px 8px -8px white,
-                    0px 1px 8px 1px black,
-                 0px 5px 8px 10px whitesmoke;
+                    0px 8px 8px -4px black;
+            background: linear-gradient(to bottom,#e35d71,#d35770);
             outline: 2px solid lightgray;
             outline-offset: 4px;
             cursor: pointer;
+            z-index: 2;
         }
         .btn:hover{
             background: #f66c7c;
-            border: 1px solid #db6a80;
-            border-bottom: 4px solid #db6a80;
+            border: 2px solid #db6a80;
+            border-bottom: 4px solid #c04e65;
             box-shadow: 
                 inset 0px 8px 8px -8px white,
-                    0px 1px 8px 2px black,
-                 0px 5px 8px 10px whitesmoke;
+                0px 8px 8px -4px black;
+            background: linear-gradient(to top,#e35d71,#d35770);
+        }
+        .fondo{
+            position: absolute;
+            border-radius: 10px;
+            top: 240px;
+            left: 20px;
+            width: 210px;
+            height: 60px;
+            background:linear-gradient(to bottom,grey,white);
+            z-index: 1;
         }
     </style>
 </head>
@@ -61,6 +73,7 @@
          <input type="text" id="dni" size="10" maxlength="9" />
          <label for="contrasena">Contraseña</label>
          <input type="password" id="contrasena" />
+         <div class="fondo"></div>
          <input class="btn" type="submit" value="Darme de alta" />
         </fieldset>
         </form>
