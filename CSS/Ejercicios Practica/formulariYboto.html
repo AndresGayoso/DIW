@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 500px;
+        }
+        form input {
+            padding: .2em;
+        }
+        input:focus {
+            border: 2px solid #000;
+            background: #F3F3F3;
+        }
+        label {
+            display: block;
+            margin: .5em 0 0 0;
+        }
+        .btn {
+            width: 100px;
+            height: 25px;
+            display: block;
+            margin: 1em 0;
+            color: white;
+            background: #e35d71;
+            border: 1px solid #c04e65;
+            border-radius: 1px;
+            border-bottom: 4px solid #c04e65;
+            box-shadow: 
+                inset 0px 8px 8px -8px white,
+                    0px 1px 8px 1px black,
+                 0px 5px 8px 10px whitesmoke;
+            outline: 2px solid lightgray;
+            outline-offset: 4px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #f66c7c;
+            border: 1px solid #db6a80;
+            border-bottom: 4px solid #db6a80;
+            box-shadow: 
+                inset 0px 8px 8px -8px white,
+                    0px 1px 8px 2px black,
+                 0px 5px 8px 10px whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+         <legend>Alta en el servicio</legend>
+         <label for="nombre">Nombre</label>
+         <input type="text" id="nombre" />
+         <label for="apellidos">Apellidos</label>
+         <input type="text" id="apellidos" size="50" />
+         <label for="dni">DNI</label>
+         <input type="text" id="dni" size="10" maxlength="9" />
+         <label for="contrasena">Contraseña</label>
+         <input type="password" id="contrasena" />
+         <input class="btn" type="submit" value="Darme de alta" />
+        </fieldset>
+        </form>
+</body>
+</html>
