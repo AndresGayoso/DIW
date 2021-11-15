@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Column</title>
+</head>
+<style>
+    body{
+        counter-reset: contador;
+    }
+    header{
+        background: linear-gradient(to bottom right ,grey,lightblue,blue );
+        border-radius: 20%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 100px;
+    }
+    a{
+        text-align: center;
+        float: left;
+        width: 25%;
+        height: 50px;
+        background-color: darkblue;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        margin-top: 0px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+    a:hover{
+        background-color: whitesmoke;
+        color: black;
+    }
+    a::before{
+        counter-increment: contador;
+        content: counter(contador);
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    section{
+        float: left;
+        text-align: center;
+        width: 24%;
+        text-align: justify;
+        margin-right: 1%;
+        flex: 1;
+    }
+    footer{
+        background: radial-gradient(at top left,grey 40%,lightblue 70%,blue);
+        float: left;
+        width: 100%;
+        height: 80px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 50px;
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+</style>
+<body>
+    <header>This is the logo brand header</header>
+    <nav>
+        <a href=""> Resources</a>
+        <a href=""> Team</a>
+        <a href=""> About us</a>
+        <a href=""> Contact</a>
+    </nav>
+    <div class="main">
+    <section name ="viewport" content="width=device-width,initial-scale=1.0">
+        <h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yin_yang.svg/480px-Yin_yang.svg.png">
+        Our Resources
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+    <section>
+        <h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yin_yang.svg/480px-Yin_yang.svg.png">
+        The best team
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+    <section>
+        <h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yin_yang.svg/480px-Yin_yang.svg.png">
+        This is what we do
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+    <section>
+        <h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yin_yang.svg/480px-Yin_yang.svg.png">
+        Surprise
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+    </div>
+    <footer>
+        Copyleft
+    </footer>
+</body>
+</html>
