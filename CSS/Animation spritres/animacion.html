@@ -52,6 +52,7 @@
             0% {background-position-y: 0;}
             100%{ background-position-y: -600px;}
         }
+        /*Contendor banderas*/
         .banderas{
             width: 47px;
             height: 54px;
@@ -60,13 +61,31 @@
             banderasX 2s steps(16) infinite,
             banderasY 30s steps(15) infinite;
         }
+        /*Animacion eje horizontal banderas*/
         @keyframes banderasX {
             0% { background-position-x: 0;}
             100% { background-position-x: -800px}
         }
+        /*Animacion eje horizontal banderas*/
         @keyframes banderasY {
             0% { background-position-y: 0;}
             100% { background-position-y: -750px;}
+        }
+        .mickey{
+            width: 256px;
+            height: 308px;
+            background: url("mickey-sprite.png");
+            animation: 
+            mickeyX 1.5s steps(8) infinite,
+            mickeyY 12s steps(5) infinite; 
+        }
+        @keyframes mickeyX {
+            0% { background-position-x: 0;}
+            100% { background-position-x: -2048px}
+        }
+        @keyframes mickeyY {
+            0% { background-position-y: 0;}
+            100% { background-position-y: -1540px;}
         }
     </style>
 </head>
@@ -78,5 +97,7 @@
     <div class="explosion"></div>
     <br>
     <div class="banderas"></div>
+    <br>
+    <div class="mickey"></div>
 </body>
 </html>
