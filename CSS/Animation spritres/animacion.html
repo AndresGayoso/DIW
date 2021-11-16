@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Sprites</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        /*Contenedor correr*/
+        .run{
+            width: 256px;
+            height: 256px;
+            background: url("run.png");
+            animation: run 0.2s steps(6) infinite;
+        }
+        /*Animacion correr*/
+        @keyframes run {
+            0% { background-position: 0;}
+            100% { background-position: -1536px;}
+        }
+        /*Contenedor monstruo*/
+        .monstruo{
+            width: 190px;
+            height: 240px;
+            background:url("foto.png");
+            animation: monstruo 0.3s steps(10) infinite;
+        }
+        /*Animacion monstruo*/
+        @keyframes monstruo {
+            0% { background-position: 0;}
+            100% { background-position: -1900px;}
+        }
+        /*Contenedor explosion*/
+        .explosion{
+            width: 100px;
+            height: 100px;
+            background: url("explosion.png");
+            animation: 
+            explosionX 0.5s steps(6) infinite,
+            explosionY 3s steps(6) infinite;
+        }
+        /*Animacion eje horizontal explosion*/
+        @keyframes explosionX {
+            0% {background-position-x: 0px;}
+            100% {background-position-x: -600px;}
+        }
+        /*Animacion eje vertical explosion*/
+        @keyframes explosionY{
+            0% {background-position-y: 0;}
+            100%{ background-position-y: -600px;}
+        }
+        .banderas{
+            width: 47px;
+            height: 54px;
+            background: url("flags.png");
+            animation:
+            banderasX 2s steps(16) infinite,
+            banderasY 30s steps(15) infinite;
+        }
+        @keyframes banderasX {
+            0% { background-position-x: 0;}
+            100% { background-position-x: -800px}
+        }
+        @keyframes banderasY {
+            0% { background-position-y: 0;}
+            100% { background-position-y: -750px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="run"></div>
+    <br>
+    <div class="monstruo"></div>
+    <br>
+    <div class="explosion"></div>
+    <br>
+    <div class="banderas"></div>
+</body>
+</html>
