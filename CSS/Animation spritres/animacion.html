@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animation Sprites</title>
     <style>
-        body{
-            background-color: black;
-        }
-        /*Contenedor correrr*/
+        /*Contenedor correr*/
         .run{
             width: 256px;
             height: 256px;
             background: url("run.png");
             animation: run 0.2s steps(6) infinite;
         }
-        /*Animacion correrr*/
+        /*Animacion correr*/
         @keyframes run {
             0% { background-position: 0;}
             100% { background-position: -1536px;}
@@ -71,21 +68,62 @@
             0% { background-position-y: 0;}
             100% { background-position-y: -750px;}
         }
+         /*Contendor mickey*/
         .mickey{
             width: 256px;
             height: 308px;
             background: url("mickey-sprite.png");
             animation: 
-            mickeyX 1.5s steps(8) infinite,
-            mickeyY 12s steps(5) infinite; 
+            mickeyX 1s steps(8) infinite,
+            mickeyY 5s steps(5) infinite; 
         }
+        /*Animacion eje horizontal mickey*/
         @keyframes mickeyX {
             0% { background-position-x: 0;}
             100% { background-position-x: -2048px}
         }
+        /*Animacion eje vertical mickey*/
         @keyframes mickeyY {
             0% { background-position-y: 0;}
             100% { background-position-y: -1540px;}
+        }
+        /*Contenedor jason*/
+        .jason{
+            width: 80px;
+            height: 94px;
+            background: url("Jason_Bourne.png");
+            animation: 
+            jasonX 1s steps(8) infinite,
+            jasonY 8s steps(5) infinite; 
+        }
+        /*Animacion eje horizontal jason*/
+        @keyframes jasonX {
+            0% { background-position-x: 0;}
+            100% { background-position-x: -640px}
+        }
+        /*Animacion eje vertical jason*/
+        @keyframes jasonY {
+            0% { background-position-y: 0;}
+            100% { background-position-y: -470px;}
+        }
+        /*Contenedor monedas*/
+        .monedas{
+            width: 1024px;
+            height: 200px;
+            background: url("money.jpg");
+            animation:
+            moneyX 1s steps(7) infinite,
+            moneyY 14s steps(5) infinite; 
+        }
+        /*Animacion eje horizontal monedas*/
+        @keyframes moneyX {
+            0% { background-position-x: 0;}
+            100% { background-position-x: -1024px}
+        }
+        /*Animacion eje vertical monedas*/
+        @keyframes moneyY {
+            0% { background-position-y: 0;}
+            100% { background-position-y: -1024px;}
         }
     </style>
 </head>
@@ -99,5 +137,9 @@
     <div class="banderas"></div>
     <br>
     <div class="mickey"></div>
+    <br>
+    <div class="jason"></div>
+    <br>
+    <div class="monedas"></div>
 </body>
 </html>
