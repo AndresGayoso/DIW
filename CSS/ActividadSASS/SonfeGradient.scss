@@ -1,0 +1,91 @@
+/*Creamos las 4 variables*/
+$blanco: white;
+$verde: green;
+$px20: 20px;
+$body-width: 80%;
+
+/*Creamos los mixin*/
+@mixin float-right{
+  float: right;
+}
+
+@mixin float-left{
+  float: left;
+}
+
+/*Utilizo la variable body-width*/
+body {
+  width: $body-width;
+}
+
+.header {
+  background: linear-gradient(to bottom, rgb(24, 209, 24), greenyellow);
+  position: relative;
+  padding-bottom: 100px;
+}
+/*Utlizo variable blanco*/
+.header h1 {
+  color: $blanco;
+  padding-top: 50px;
+}
+/*Utlizo variable px20, mixin*/
+.logo img{
+  height: 150px;
+  margin-top: $px20;
+  margin-right: $px20;
+  @include float-right;
+}
+ul{
+  list-style: none;
+}
+/*Utlizo variable blanco, verde y px20*/
+ul li{
+  background-color: $verde;
+  color: $blanco;
+  font-size: $px20;
+  margin-bottom: 10px;
+}
+ul li::first-letter{
+  color: orange;
+  font-size: 35px;
+}
+/*Utilizo mixin*/
+.column-menu{
+  width: 300px;
+  padding-right: 50px;
+  margin-left: -40px;
+  @include float-left;
+}
+.column-content{
+  display: inline-block;
+  line-height: 35px;
+}
+/*Utlizo variable verde, px20, mixin*/
+.column-news{
+  border: 3px solid $verde;
+  margin-top: $px20;
+  margin-right: $px20;
+  width: 300px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 200px;
+  @include float-right;
+}
+/*Utlizo variable verde*/
+.footer{
+  background: radial-gradient($verde 5%,rgb(24, 209, 24) 30%,greenyellow 60%);
+  height: 120px;  
+}
+/*Utlizo variable px20*/
+.footer p{
+  font-size: $px20;
+  padding-top: 30px;
+}
+/*Utlizo variable px20, pseudo clase, mixin*/
+.footer p a{
+  font-size: medium;
+  margin-right: 80px;
+  margin-top: -$px20;
+  &:hover {color: red;};
+  @include float-right;
+}
