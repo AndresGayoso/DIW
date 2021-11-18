@@ -12,6 +12,29 @@ $body-width: 80%;
 @mixin float-left{
   float: left;
 }
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%;
+  }
+  .content {
+    width: 75%;
+  }
+  .news {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .menu {
+    width: 25%;
+  }
+  .content {
+    width: 50%;
+  }
+  .news {
+    width: 25%;
+  }
+}
 
 /*Utilizo la variable body-width*/
 body {
