@@ -1,5 +1,7 @@
 /*Creamos las 4 variables*/
 /*Creamos los mixin*/
+/*Creamos la funcion*/
+/*Creamos los media para hacer la pantalla responsive*/
 @media only screen and (min-width: 600px) {
     .menu {
         width: 25%;
@@ -53,6 +55,7 @@ ul li {
     font-size: 20px;
     margin-bottom: 10px;
 }
+/*Pseudo elemento*/
 ul li::first-letter {
     color: orange;
     font-size: 35px;
@@ -89,7 +92,7 @@ ul li::first-letter {
     font-size: 20px;
     padding-top: 30px;
 }
-/*Utlizo variable px20, pseudo clase, mixin*/
+/*Utlizo variable px20, pseudo clase, mixin y funcion*/
 .footer p a {
     font-size: medium;
     margin-right: 80px;
@@ -97,5 +100,5 @@ ul li::first-letter {
     float: right;
 }
 .footer p a:hover {
-    color: red;
+    color: #68ff42;
 }

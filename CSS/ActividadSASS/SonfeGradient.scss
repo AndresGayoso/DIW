@@ -12,6 +12,13 @@ $body-width: 80%;
 @mixin float-left{
   float: left;
 }
+
+/*Creamos la funcion*/
+@function color($hex){
+  @return $hex * 2;
+}
+
+/*Creamos los media para hacer la pantalla responsive*/
 @media only screen and (min-width: 600px) {
   .menu {
     width: 25%;
@@ -68,6 +75,7 @@ ul li{
   font-size: $px20;
   margin-bottom: 10px;
 }
+/*Pseudo elemento*/
 ul li::first-letter{
   color: orange;
   font-size: 35px;
@@ -104,11 +112,11 @@ ul li::first-letter{
   font-size: $px20;
   padding-top: 30px;
 }
-/*Utlizo variable px20, pseudo clase, mixin*/
+/*Utlizo variable px20, pseudo clase, mixin y funcion*/
 .footer p a{
   font-size: medium;
   margin-right: 80px;
   margin-top: -$px20;
-  &:hover {color: red;};
+  &:hover {color: color(#34FD21);};
   @include float-right;
 }
