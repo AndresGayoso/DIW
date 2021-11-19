@@ -3,102 +3,125 @@
 /*Creamos la funcion*/
 /*Creamos los media para hacer la pantalla responsive*/
 @media only screen and (min-width: 600px) {
-    .menu {
-        width: 25%;
-   }
-    .content {
-        width: 75%;
-   }
-    .news {
-        width: 100%;
-   }
+  .menu {
+    width: 25%;
+  }
+
+  .content {
+    width: 75%;
+  }
+
+  .news {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 600px) {
-    .menu {
-        width: 25%;
-   }
-    .content {
-        width: 50%;
-   }
-    .news {
-        width: 25%;
-   }
+  .menu {
+    width: 25%;
+  }
+
+  .content {
+    width: 50%;
+  }
+
+  .news {
+    width: 25%;
+  }
 }
 /*Utilizo la variable body-width*/
 body {
-    width: 80%;
+  width: 80%;
 }
+
 .header {
-    background: linear-gradient(to bottom, #18d118, greenyellow);
-    position: relative;
-    padding-bottom: 100px;
+  background: linear-gradient(to bottom, #18d118, greenyellow);
+  position: relative;
+  padding-bottom: 100px;
 }
+
 /*Utlizo variable blanco*/
 .header h1 {
-    color: white;
-    padding-top: 50px;
+  color: white;
+  padding-top: 50px;
 }
+
 /*Utlizo variable px20, mixin*/
 .logo img {
-    height: 150px;
-    margin-top: 20px;
-    margin-right: 20px;
-    float: right;
+  height: 150px;
+  margin-top: 20px;
+  margin-right: 20px;
+  float: right;
 }
+
 ul {
-    list-style: none;
+  list-style: none;
 }
+
 /*Utlizo variable blanco, verde y px20*/
 ul li {
-    background-color: green;
-    color: white;
-    font-size: 20px;
-    margin-bottom: 10px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
+
 /*Pseudo elemento*/
 ul li::first-letter {
-    color: orange;
-    font-size: 35px;
+  color: orange;
+  font-size: 35px;
 }
+
 /*Utilizo mixin*/
 .column-menu {
-    width: 300px;
-    padding-right: 50px;
-    margin-left: -40px;
-    float: left;
+  width: 300px;
+  padding-right: 50px;
+  margin-left: -40px;
+  float: left;
 }
+
 .column-content {
-    display: inline-block;
-    line-height: 35px;
+  margin-right: 100px;
+  line-height: 35px;
+  float: left;
 }
+
 /*Utlizo variable verde, px20, mixin*/
 .column-news {
-    border: 3px solid green;
-    margin-top: 20px;
-    margin-right: 20px;
-    width: 300px;
-    padding-right: 10px;
-    padding-left: 10px;
-    height: 200px;
-    float: right;
+  border: 3px solid green;
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 300px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 200px;
+  float: left;
 }
-/*Utlizo variable verde*/
+
+/*Utlizo variable verde , px20 y mixin*/
 .footer {
-    background: radial-gradient(green 5%, #18d118 30%, greenyellow 60%);
-    height: 120px;
+  background: radial-gradient(green 5%, #18d118 30%, greenyellow 60%);
+  width: 100%;
+  height: 120px;
+  margin-top: 20px;
+  float: left;
 }
+
 /*Utlizo variable px20*/
 .footer p {
-    font-size: 20px;
-    padding-top: 30px;
+  font-size: 20px;
+  margin-left: 10px;
+  padding-top: 30px;
 }
-/*Utlizo variable px20, pseudo clase, mixin y funcion*/
+
+/*Utlizo pseudo clase, mixin y funcion*/
 .footer p a {
-    font-size: medium;
-    margin-right: 80px;
-    margin-top: -20px;
-    float: right;
+  font-size: medium;
+  margin-right: 80px;
+  margin-top: -30px;
+  float: right;
 }
 .footer p a:hover {
-    color: #68ff42;
+  color: 50709;
 }
+
+/*# sourceMappingURL=SonfeGradient.css.map */
