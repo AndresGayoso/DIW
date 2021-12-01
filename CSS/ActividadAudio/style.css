@@ -1,0 +1,29 @@
+body {
+    background-color: #212121;
+    font-size: 24px;
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: sans-serif;
+}
+.play.playing{
+    transition: all 0.2s;
+    opacity: 0.75;
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    border-right: calc(0.5em - 2px) solid white;
+    border-left: calc(0.5em - 2px) solid white;
+    border-top: 0;
+    border-bottom: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.play{
+    width: 0;
+    height: 0;
+    border-right: 0;
+    border-left: 1em solid white;
+    border-top: 0.5em solid transparent;
+    border-bottom: 0.5em solid transparent;
+    cursor: pointer;
+}
