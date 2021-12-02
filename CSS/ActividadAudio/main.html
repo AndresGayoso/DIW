@@ -7,19 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACTIVITY (audios)</title>
     <link rel="stylesheet" href="style.css">
-
+    <link href="fontawesome/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <audio id="myAudio">
+    <audio id="myAudio" ontimeupdate="updateProgress();">
         <source src="nevermind.mp3" type="audio/mp3">
     </audio>
     <div>
         <div class="play" onclick="play(event);togglePlay();"></div>
     </div>
-    <script src="index.js">
-        document.write(myAudio.duration)
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
