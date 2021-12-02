@@ -62,3 +62,7 @@ function Next(){
   myAudio.load();
   myAudio.play();
 }
+
+function Stop(){
+
+}

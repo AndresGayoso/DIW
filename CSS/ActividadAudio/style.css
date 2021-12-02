@@ -31,7 +31,7 @@ body {
     cursor: pointer;
 }
 
-.back{
+.back {
     float: left;
     position: relative;
     font-size: 30px;
@@ -40,10 +40,18 @@ body {
     cursor: pointer;
 }
 
-.next{
- position: relative;
- font-size: 30px;
- margin-top: -4px;
- margin-left: 75px;
- cursor: pointer;
+.next {
+    float: left;
+    font-size: 30px;
+    margin-top: -4px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.stop {
+    float: left;
+    font-size: 30px;
+    margin-top: -4px;
+    margin-left: 15px;
+    cursor: pointer;
 }
