@@ -14,26 +14,37 @@
     <audio id="myAudio" onended="Next()">
         <source id="source" src="cancion1.mp3" type="audio/mp3">
     </audio>
+    <img id="imagen" src="https://img.discogs.com/u8_ZZU0f96Ht4vBtbQ0s1CMuzYA=/fit-in/600x600/filters:strip_icc():format(webp):mode_rgb():quality(90)/discogs-images/R-21136396-1637979755-9642.jpeg.jpg">
     <div class="nombre">
-        <h3>Now Playing: <p id="nombre"></p></h3>
+        <h3>Now Playing: <p id="nombre"></p>
+        </h3>
+    </div>
+    
+    <div class="tiempo">
+        <p>
+            <p id="tiempo"></p>
+            /
+            <p id="duracion"></p>
+        </p>
     </div>
     <div class="back">
-        <i class="fas fa-step-backward" onclick="Back()"></i>
+        <i id="back" class="fas fa-step-backward" onclick="Back()"></i>
     </div>
     <div>
         <div id="play" class="play" onclick="play(event);togglePlay();"></div>
     </div>
     <div class="stop">
-        <i class="fas fa-stop" onclick="Stop(event)"></i>
+        <i class="fas fa-stop" onclick="Stop()"></i>
     </div>
     <div class="suffle">
         <i class="fa fa-random" onclick="Shuffle()"></i>
     </div>
     <div class="next">
-        <i class="fas fa-step-forward" onclick="Next()"></i>
+        <i id="next" class="fas fa-step-forward" onclick="Next()"></i>
     </div>
-    <script src="index.js">
-    </script>
+    <p id="info" >Estas en modo aleatorio</p>
+    <p id="info2">(Para volver al modo normal refresca la pagina)</p>
+    <script src="index.js"></script>
 </body>
 
 </html>

@@ -67,3 +67,18 @@ body {
     margin-bottom: -10px;
     display: inline-block;
 }
+.tiempo p{
+    margin-top: 0px;
+    display: inline-block;
+}
+
+img{
+    width: 400px;
+    height: 400px;
+    margin-bottom: -30px;
+}
+
+#info{
+    margin-top: 60px;
+    display: block;
+}
