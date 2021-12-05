@@ -113,6 +113,8 @@ function Shuffle() {
   document.getElementById("myAudio").setAttribute('onended', 'Shuffle()');
   document.getElementById("next").setAttribute('onclick', 'Shuffle()');
   document.getElementById("back").setAttribute('onclick', 'Shuffle()');
+  document.getElementById("info").setAttribute('style', 'visibility: visible;');
+  document.getElementById("info2").setAttribute('style', 'visibility: visible;');
   myAudio.load();
   myAudio.play();
 }
@@ -129,4 +131,19 @@ setInterval(function Tiempo() {
   if (myAudio.duration >= 10) {
     document.getElementById("duracion").innerHTML = "0:" + Math.floor(myAudio.duration);
   }
+  document.getElementById("barra").setAttribute("value",myAudio.currentTime + 0.7);
+  document.getElementById("barra").setAttribute("max",myAudio.duration);
 }, 500);
+
+
+var barra = document.getElementById("slider");
+
+barra.addEventListener("change",function(ev){
+	
+	myAudio.volume = ev.currentTarget.value;
+
+	var resultado = document.getElementById("valor");
+	resultado.innerHTML = Math.floor(ev.currentTarget.value * 100) + "%";
+},true);
+
+document.getElementById("valor").innerHTML = document.getElementById("slider").value * 100 + "%";

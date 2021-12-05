@@ -19,13 +19,15 @@
         <h3>Now Playing: <p id="nombre"></p>
         </h3>
     </div>
-    
     <div class="tiempo">
+        <progress id="barra" max="" value=""> 70% </progress>
         <p>
             <p id="tiempo"></p>
             /
             <p id="duracion"></p>
         </p>
+        <input type="range" orient="vertical" min="0" max="1" value="0.5" step="0.01" id="slider">
+        <span id="valor"></span>
     </div>
     <div class="back">
         <i id="back" class="fas fa-step-backward" onclick="Back()"></i>
@@ -42,8 +44,8 @@
     <div class="next">
         <i id="next" class="fas fa-step-forward" onclick="Next()"></i>
     </div>
-    <p id="info" >Estas en modo aleatorio</p>
-    <p id="info2">(Para volver al modo normal refresca la pagina)</p>
+    <p id="info" style="visibility: hidden;">Estas en modo aleatorio</p>
+    <p id="info2" style="visibility: hidden;">(Para volver al modo normal refresca la pagina)</p>
     <script src="index.js"></script>
 </body>
 

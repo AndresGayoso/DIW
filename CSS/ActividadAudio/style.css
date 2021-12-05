@@ -55,7 +55,7 @@ body {
     cursor: pointer;
 }
 
-.suffle{
+.suffle {
     float: left;
     font-size: 30px;
     margin-top: -4px;
@@ -63,22 +63,51 @@ body {
     cursor: pointer;
 }
 
-.nombre p{
+.nombre p {
     margin-bottom: -10px;
     display: inline-block;
 }
-.tiempo p{
+
+.tiempo p {
     margin-top: 0px;
     display: inline-block;
+    position: relative;
+}
+.tiempo{
+    margin-top: -50px;
 }
 
-img{
+img {
     width: 400px;
     height: 400px;
     margin-bottom: -30px;
 }
 
-#info{
+#info {
     margin-top: 60px;
     display: block;
+}
+
+input[type=range][orient=vertical] {
+    -webkit-appearance: slider-vertical;
+    width: 8px;
+    margin-top: 30px;
+    height: 80px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+progress {
+    -webkit-appearance: none;
+    width: 400px;
+}
+
+::-webkit-progress-bar {
+    background-color: white;
+    border-radius: 10px;
+}
+
+::-webkit-progress-value {
+    background: linear-gradient(to left,#00FFFF,lightblue);
+    border-radius: 10px;
 }
