@@ -10,6 +10,7 @@ var canciones = [
   "cancion7.mp3",
   "cancion8.wav",
   "cancion9.ogg",
+  "cancionAGS.mp3"
 ]
 var nombres = [
   "Never Mind - NUZB",
@@ -20,7 +21,8 @@ var nombres = [
   "Overpass Graffiti - Ed Sheeran",
   "Love Again - Dua Lipa",
   "Woman - Doja Cat",
-  "I Wish - Joel Corry Feat. Mabel"
+  "I Wish - Joel Corry Feat. Mabel",
+  "Sistemas Informaticos - Andres Gayoso"
 ]
 var imagenes = [
   "https://img.discogs.com/u8_ZZU0f96Ht4vBtbQ0s1CMuzYA=/fit-in/600x600/filters:strip_icc():format(webp):mode_rgb():quality(90)/discogs-images/R-21136396-1637979755-9642.jpeg.jpg",
@@ -29,10 +31,10 @@ var imagenes = [
   "https://images-na.ssl-images-amazon.com/images/I/51tPtCAJNOL._SY445_SX342_QL70_ML2_.jpg",
   "https://i.ytimg.com/vi/3YqPKLZF_WU/maxresdefault.jpg",
   "https://i.ytimg.com/vi/0qTQR92UuUA/maxresdefault.jpg",
-  "https://www.lahiguera.net/musicalia/artistas/dua_lipa/disco/10290/tema/25220/dua_lipa_love_again-portada.jpg",
   "https://i.pinimg.com/originals/df/3e/d7/df3ed7f694e11ef98ec96f45c3f5e53f.jpg",
   "https://i1.sndcdn.com/artworks-DRKdjL733c9GhWz6-Q3Nz1g-t500x500.jpg",
-  "https://m.media-amazon.com/images/I/51UwrMed6KL._UXNaN_FMjpg_QL85_.jpg"
+  "https://m.media-amazon.com/images/I/51UwrMed6KL._UXNaN_FMjpg_QL85_.jpg",
+  "http://pm1.narvii.com/6386/bf0f1ace5036f093a98b1752831c012d0e6993ea_00.jpg"
 ];
 var i = 0;
 
@@ -57,7 +59,7 @@ function Back() {
   }
   i--;
   if (i < 0) {
-    i = canciones.length - 1;
+    i = canciones.length;
   }
   document.getElementById("source").setAttribute('src', canciones[i]);
   if (canciones[i].includes(".wav")) {
