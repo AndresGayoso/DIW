@@ -59,7 +59,7 @@ function Back() {
   }
   i--;
   if (i < 0) {
-    i = canciones.length;
+    i = canciones.length - 1;
   }
   document.getElementById("source").setAttribute('src', canciones[i]);
   if (canciones[i].includes(".wav")) {

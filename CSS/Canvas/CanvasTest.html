@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='es'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta content='width=device-width, user-scalable=no,name='viewport'>
+        <title>Canvas test</title>
+    </head>
+    <body>
+    <canvas id='myCanv' width="900" height="500" style="border: 2px solid black;"></canvas>
+    <script>
+        const mywidth="1000px";
+        const myheight="500px";
+        var canvas = document.getElementById("myCanv");
+        var context = canvas.getContext("2d");
+        
+        //we clear everything and save context
+        context.save();
+        //needed for animations
+        //context.clearRect(0, 0, mywidth,myheight);
+
+        //line
+        context.beginPath();
+        context.moveTo(50, 50);
+        context.lineTo(100, 100);
+        context.strokeStyle= '#00ff00';
+        context.lineWidth=10;
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle= '#0000ff';
+        context.moveTo(100, 100);
+        context.lineTo(150, 50);
+        context.stroke();
+
+        context.beginPath();
+        //x pos, y pos, radius, startAngle, endAngle, counterClockwise
+        context.arc(210, 90, 40, 0,1 * Math.PI, true);
+        context.stroke();
+
+        //we restore the initial context
+        context.restore();
+        // we start again to apply new styles
+        context.beginPath();
+        context.arc(310, 90, 40, 0, 1 * Math.PI, false);
+        context.stroke();
+        //mid point x,y, midpoing2 x,y , end point
+        //Start again
+        context.beginPath();
+        //start point
+        context.moveTo(420, 100);
+        //mid point x,y, midpoing2 x,y , end point
+        context.bezierCurveTo(320, 10, 480, 10, 588, 150);
+        context.lineWidth = 5;
+        context.fill();
+        //context.stroke();
+        
+        //TEXT and fill
+        context.font = 'italic 25pt Arial';
+        context.fillStyle = 'pink';
+        context.fillText('DIW WORLD!', 620, 100);
+      
+    </script>
+</body>
+</html>
+
+
+
