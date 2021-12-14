@@ -114,8 +114,10 @@ function endGame() {
 
 // Move the target square to a random position
 function moveTarget() {
-  targetX = Math.round(Math.random() * canvas.width - targetLength);
-  targetY = Math.round(Math.random() * canvas.height - targetLength)
+  randomPositionX = canvas.width - targetLength;  
+  randomPositionY = canvas.height - targetLength;
+  targetX = Math.round(Math.random() * randomPositionX);
+  targetY = Math.round(Math.random() * randomPositionY)
 }
 
 // Clear the canvas
