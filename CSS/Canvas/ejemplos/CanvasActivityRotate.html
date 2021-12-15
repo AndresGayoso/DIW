@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CanvasActivity</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="text" type="text">
+        <button onclick="init()">Animation</button>
+        <br>
+        <canvas id="canvas" width = "800" height = "800"></canvas>
+        <script>
+            var text;
+            var canvas;
+            var ctx;
+            const rspeed=2
+            const ang=100
+
+            var index = 0;
+
+            function init() {
+                text = document.getElementById("text").value;
+                canvas = document.getElementById("canvas");
+                ctx = canvas.getContext("2d");
+
+
+                setInterval(animation, 30);
+            }
+
+            function animation() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.save();
+                //ctx.moveTo(spx, spy);
+                ctx.translate(300+rspeed*Math.random(), 300+rspeed*Math.random());
+                ctx.rotate(Math.PI * (index++ / ang));
+
+                ctx.textAlign = "center";
+                ctx.font = "4em Arial";
+                ctx.fillStyle = 'blue';
+
+                ctx.fillText(text, 0, 0);
+                ctx.restore();
+            }
+        </script>
+    </body>
+</html>

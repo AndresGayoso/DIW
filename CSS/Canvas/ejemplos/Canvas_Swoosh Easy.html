@@ -20,21 +20,19 @@
         let myr=false;
         function Moveswoosh(a, b) {
             // clean canvas
-            context.clearRect(0, 0, 900, 500);
+            context.clearRect(0, 0, canvas.width, canvas.height);
             context.beginPath()
             //debugger; if its inside bounds
-            /*
-            if (spx+125>=canvas.width || spx<=0 || spy+100>=canvas.height || spy -120 <=0){
+            if (spx>=canvas.width || spx<=0 || spy>=canvas.height || spy -120 <=0){
                 spx=0;
             }
-            spx+=2;*/
-            
+            spx+=2;
             
             context.moveTo(spx, spy);
             //context.strokeRect
-            context.bezierCurveTo(spx+50, spy+110, spx+125, spy-80, spx+125, spy-90);
+            context.fillStyle = '#0000FF';
+            context.fillRect(spx, spy, 50, 50);
             //context.rotate(Math.PI * (i / 1000));
-            context.rotate(2 * Math.PI / 1000);
             context.stroke();
             //debugger;
             window.requestAnimationFrame(() => {
