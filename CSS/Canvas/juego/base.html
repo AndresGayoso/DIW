@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #canvas {
-            width: 600px;
-            height: 400px;
-            border: 1px solid black;
-        }
-    </style>
+    <title>Recolectar cuadrados</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-    <canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
-    <script src="juego.js"></script>
+    <div id="menu">
+        <h1>Recoge los cuadrados</h1>
+        <p id="p1"> 1 jugador</p>
+        <input id="input1" type="radio" onclick="input1()" name="jugadores">
+        <p id="p2"> 2 jugadores</p>
+        <input id="input2" type="radio" onclick="input2()" name="jugadores">
+        <p id="p3">Introduce el tiempo de juego</p>
+        <input id="tiempo" type="text" placeholder="ejemplo 30">
+        <button onclick="startGame()">Empezar</button>
+    </div>
+    <canvas id="jugador1" width="600" height="400" tabindex="1"></canvas>
+    <canvas id="jugador2" width="600" height="400" tabindex="1"></canvas>
+    <script src="jugador1.js"></script>
 </body>
 
 </html>

@@ -1,41 +1,42 @@
-// Collect The Square game
+// Recoger lo cuadrados
 
-// Get a reference to the canvas DOM element
-var canvas = document.getElementById('canvas');
-// Get the canvas drawing context
+// Damos una variable a nuestro canvas
+var canvas = document.getElementById('jugador1');
+// Creamos un contexto en 2 dimensiones
 var context = canvas.getContext('2d');
 
-// Your score
+// Nuestra puntuacion
 var score = 0;
 
-// Properties for your square
-var x = 50; // X position
-var y = 100; // Y position
-var speed = 6; // Distance to move each frame
-var sideLength = 50; // Length of each side of the square
+// Nuesto Cuadrado
+var x = 50; // posicion X
+var y = 100; // posicion Y
+var speed = 5; // Distancia que se mueve el cuadrado
+var sideLength = 50; // La anchura de nuestro cuadrado 50px 50px
 
-// FLags to track which keys are pressed
+// Variables para saber si las teclas estan siendo pulsadas
 var down = false;
 var up = false;
 var right = false;
 var left = false;
 
-// Properties for the target square
+// El cuadrado que debemos recoger para puntuar
 var targetX = 0;
 var targetY = 0;
 var targetLength = 25;
 
-// Determine if number a is within the range b to c (exclusive)
+// Para saber si el cuadrado esta cerca del cuadrado(objetivo)
 function isWithin(a, b, c) {
   return (a > b && a < c);
 }
 
-// Countdown timer (in seconds)
-var countdown = 30;
-// ID to track the setTimeout
+// Declaramos la variable del tiempo
+var countdown;
+
+// Nos sirve como referecia para cuando se acabe el tiempo
 var id = null;
 
-// Listen for keydown events
+// Escucha cuando la tecla se pulsa
 canvas.addEventListener('keydown', function(event) {
   event.preventDefault();
   console.log(event.key, event.keyCode);
@@ -53,7 +54,7 @@ canvas.addEventListener('keydown', function(event) {
   }
 });
 
-// Listen for keyup events
+// Escucha cuando la tecla se suelta
 canvas.addEventListener('keyup', function(event) {
   event.preventDefault();
   console.log(event.key, event.keyCode);
@@ -71,48 +72,49 @@ canvas.addEventListener('keyup', function(event) {
   }
 });
 
-// Show the start menu
-function menu() {
-  erase();
-  context.fillStyle = '#000000';
-  context.font = '36px Arial';
-  context.textAlign = 'center';
-  context.fillText('Collect the Square!', canvas.width / 2, canvas.height / 4);
-  context.font = '24px Arial';
-  context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
-  context.font = '18px Arial'
-  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
-  // Start the game on a click
-  canvas.addEventListener('click', startGame);
-}
-
-// Start the game
+// Funcion para empezar el juego
 function startGame() {
-	// Reduce the countdown timer ever second
+  console.log(document.getElementById("input1"))
+  // Quitamos el menu
+  document.getElementById("menu").style.display = "none";
+  // El tiempo que ha escrito el jugador
+  countdown = parseInt(document.getElementById("tiempo").value);
+  // Mostramos el tablero
+  document.getElementById("jugador1").style.display = "initial";
+  // Enfocamos donde vamos a jugar
+  canvas.focus();
+	// Vamos reducinedo el tiempo cada segundo
   id = setInterval(function() {
     countdown--;
   }, 1000)
-  // Stop listening for click events
-  canvas.removeEventListener('click', startGame);
-  // Put the target at a random starting point
+  // Posicion inicial aletoria
 	moveTarget();
-  // Kick off the draw loop
+  // Iniciamos la fase de dibujo
   draw();
 }
 
-// Show the game over screen
+function menu(){
+  document.getElementById("menu").style.display = "";
+  document.getElementById("jugador1").style.display = "none";
+  canvas.removeEventListener('click',menu)
+}
+
+// Cuando se acaba el juego
 function endGame() {
-	// Stop the countdown
+	// Para el tiempo
   clearInterval(id);
-  // Display the final score
+  // Nos muestra nuestra puntuacion
   erase();
   context.fillStyle = '#000000';
   context.font = '24px Arial';
   context.textAlign = 'center';
-  context.fillText('Final Score: ' + score, canvas.width / 2, canvas.height / 2);
+  context.fillText('Tu puntuacion es: ' + score, canvas.width / 2, canvas.height / 4);
+  context.font = '16px Arial';
+  context.fillText('Para volver a jugar haz click', canvas.width / 2, canvas.height / 2);
+  canvas.addEventListener('click',menu);
 }
 
-// Move the target square to a random position
+// Muevo el cuadrado a una posicion aleatoria
 function moveTarget() {
   randomPositionX = canvas.width - targetLength;  
   randomPositionY = canvas.height - targetLength;
@@ -120,16 +122,16 @@ function moveTarget() {
   targetY = Math.round(Math.random() * randomPositionY)
 }
 
-// Clear the canvas
+// Limpiar el canvas
 function erase() {
   context.fillStyle = '#FFFFFF';
   context.fillRect(0, 0, 600, 400);
 }
 
-// The main draw loop
+// Dibuja el tablero
 function draw() {
   erase();
-  // Move the square
+  // Mover el cuadrado
   if (down) {
     y += speed;
   }
@@ -142,7 +144,7 @@ function draw() {
   if (left) {
     x -= speed;
   }
-  // Keep the square within the bounds
+  // Mantiene el cuadrado en nuestro tablero
   if (y + sideLength > canvas.height) {
     y = canvas.height - sideLength;
   }
@@ -155,28 +157,28 @@ function draw() {
   if (x + sideLength > canvas.width) {
     x = canvas.width - sideLength;
   }
-  // Collide with the target
+  // Cuando choca con el cuadrado
   if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
     if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
-      // Respawn the target
+      // Respawn del nuevo cuadrado
       moveTarget();
-      // Increase the score
+      // Añadimos un punto
       score++;
     }
   }
-  // Draw the square
+  // Dibujar nuestro cuadrado
   context.fillStyle = '#FF0000';
   context.fillRect(x, y, sideLength, sideLength);
-  // Draw the target 
+  // Dibujamos el cuadrado(objetivo)
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
-  // Draw the score and time remaining
+  // Dibujamos la puntuacion y el tiempo restante
   context.fillStyle = '#000000';
   context.font = '24px Arial';
   context.textAlign = 'left';
-  context.fillText('Score: ' + score, 10, 24);
-  context.fillText('Time Remaining: ' + countdown, 10, 50);
-  // End the game or keep playing
+  context.fillText('Puntuacion: ' + score, 10, 24);
+  context.fillText('Tiempo Restante: ' + countdown, 10, 50);
+  // Si llega a 0 se acaba el juego sino sigue
   if (countdown <= 0) {
     endGame();
   } else {
@@ -184,6 +186,3 @@ function draw() {
   }
 }
 
-// Start the game
-menu();
-canvas.focus();
