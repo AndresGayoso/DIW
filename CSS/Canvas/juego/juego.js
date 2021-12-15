@@ -132,7 +132,7 @@ function startGame() {
   // El tiempo que ha escrito el jugador
   countdown = parseInt(document.getElementById("tiempo").value);
   // Mostramos el tablero
-  document.getElementById("jugador1").style.display = "initial";
+  document.getElementById("juego").style.display = "initial";
   // Enfocamos donde vamos a jugar
   canvas.focus();
   // Vamos reducinedo el tiempo cada segundo
@@ -155,7 +155,7 @@ function menu() {
   score = 0;
   score2 = 0;
   document.getElementById("menu").style.display = "";
-  document.getElementById("jugador1").style.display = "none";
+  document.getElementById("juego").style.display = "none";
   canvas.removeEventListener('click', menu)
 }
 
