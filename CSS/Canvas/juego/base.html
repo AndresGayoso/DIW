@@ -8,6 +8,7 @@
     <title>Recolectar cuadrados</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
     <div id="menu">
         <h1>Recoge los cuadrados</h1>
@@ -15,8 +16,12 @@
         <input id="input1" type="radio" onclick="input1()" name="jugadores">
         <p id="p2"> 2 jugadores</p>
         <input id="input2" type="radio" onclick="input2()" name="jugadores">
-        <p id="p3">Introduce el tiempo de juego</p>
-        <input id="tiempo" type="text" placeholder="ejemplo 30">
+        <p id="p3"> Tiempo</p>
+        <input id="input3" type="radio" onclick="input3()" name="modo">
+        <p id="p4"> Puntos</p>
+        <input id="input4" type="radio" onclick="input4()" name="modo">
+        <p id="p5">Introduce el valor <input id="valor" type="number" placeholder="ejemplo 30" autocomplete="off"></p>
+        <p id="p6"></p>
         <button onclick="startGame()">Empezar</button>
     </div>
     <canvas id="juego" width="600" height="400" tabindex="1"></canvas>

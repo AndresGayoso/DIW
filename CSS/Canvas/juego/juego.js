@@ -17,6 +17,23 @@ function input2() {
   jugador2 = true;
 }
 
+// Modos de acabar el juego
+var tiempo = false;
+var puntos = false;
+
+// Funciones para elegir el modo de acabar
+function input3() {
+  tiempo = true;
+  puntos = false;
+  document.getElementById("p6").innerHTML = "segundos"
+}
+
+function input4() {
+  tiempo = false;
+  puntos = true;
+  document.getElementById("p6").innerHTML = "puntos"
+}
+
 // Puntuacion jugador 1
 var score = 0;
 
@@ -63,6 +80,8 @@ function isWithin(a, b, c) {
 
 // Declaramos la variable del tiempo
 var countdown;
+
+var maxscore;
 
 // Nos sirve como referecia para cuando se acabe el tiempo
 var id = null;
@@ -130,7 +149,12 @@ function startGame() {
   // Quitamos el menu
   document.getElementById("menu").style.display = "none";
   // El tiempo que ha escrito el jugador
-  countdown = parseInt(document.getElementById("tiempo").value);
+  if(tiempo == true){
+    countdown = parseInt(document.getElementById("valor").value);
+  }
+  if(puntos == true){
+    maxscore = parseInt(document.getElementById("valor").value);
+  }
   // Mostramos el tablero
   document.getElementById("juego").style.display = "initial";
   // Enfocamos donde vamos a jugar
@@ -199,6 +223,7 @@ function endGame() {
     // 1 Jugador
     context.fillText('Tu puntuacion es: ' + score, canvas.width / 2, canvas.height / 4);
   }
+  // Volver a jugar hacer click (regresa al menu)
   context.font = '16px Arial';
   context.fillStyle = '#000000';
   context.fillText('Para volver a jugar haz click', canvas.width / 2, canvas.height - 50);
@@ -213,24 +238,59 @@ function moveTarget() {
   targetY = Math.round(Math.random() * randomPositionY);
 }
 
+// Mover los obstaculos en diferentes direcciones
+// Horizontal hacia la derecha 4º obstaculo
+function moveObstacles4Xright() {
+  px4 += 2
+  if (px4 + obstacleLength > canvas.width) {
+    px4 = 0;
+  }
+}
+// Horizontal hacia la izquierda 2º Obstaculo
+function moveObstacles2Xleft() {
+  px2 -= 2
+  if (px2 < 0) {
+    px2 = canvas.width - obstacleLength;
+  }
+}
+// Vertical hacia abajo 3er Obstaculo
+function moveObstacles3Ydown() {
+  py3 += 2
+  if (py3 + obstacleLength > canvas.height) {
+    py3 = 0;
+  }
+}
+// Vertical hacia arriba 1er Obstaculo
+function moveObstacles1Yup() {
+  py -= 2
+  if (py < 0) {
+    py = canvas.height - obstacleLength;
+  }
+}
+
+// Mover los diferentes obstaculos a posicion random
+// Obstaculo 1
 function moveObstacle() {
   randomPX = canvas.width - obstacleLength;
   randomPY = canvas.height - obstacleLength;
   px = Math.round(Math.random() * randomPX);
   py = Math.round(Math.random() * randomPY);
 }
+// Obstaculo 2
 function moveObstacle2() {
   randomPX2 = canvas.width - obstacleLength;
   randomPY2 = canvas.height - obstacleLength;
   px2 = Math.round(Math.random() * randomPX2);
   py2 = Math.round(Math.random() * randomPY2);
 }
+// Obstaculo 3
 function moveObstacle3() {
   randomPX3 = canvas.width - obstacleLength;
   randomPY3 = canvas.height - obstacleLength;
   px3 = Math.round(Math.random() * randomPX3);
   py3 = Math.round(Math.random() * randomPY3);
 }
+// Obstaculo 4
 function moveObstacle4() {
   randomPX4 = canvas.width - obstacleLength;
   randomPY4 = canvas.height - obstacleLength;
@@ -309,7 +369,8 @@ function draw() {
       score++;
     }
   }
-  if (score > 4) {
+  // Al llegar a 3 puntos tiene en cuenta el 1er obstaculo
+  if (score > 2) {
     if (isWithin(px, x, x + sideLength) || isWithin(px + obstacleLength, x, x + sideLength)) { // X
       if (isWithin(py, y, y + sideLength) || isWithin(py + obstacleLength, y, y + sideLength)) { // Y
         // Respawn del nuevo obstaculo 
@@ -319,7 +380,8 @@ function draw() {
       }
     }
   }
-  if (score > 9) {
+  // Al llegar a 6 puntos tiene en cuenta el 2º obstaculo
+  if (score > 5) {
     if (isWithin(px2, x, x + sideLength) || isWithin(px2 + obstacleLength, x, x + sideLength)) { // X
       if (isWithin(py2, y, y + sideLength) || isWithin(py2 + obstacleLength, y, y + sideLength)) { // Y
         // Respawn del nuevo obstaculo 
@@ -329,7 +391,8 @@ function draw() {
       }
     }
   }
-  if (score > 14) {
+  // Al llegar a 9 puntos tiene en cuenta el 3er obstaculo
+  if (score > 8) {
     if (isWithin(px3, x, x + sideLength) || isWithin(px3 + obstacleLength, x, x + sideLength)) { // X
       if (isWithin(py3, y, y + sideLength) || isWithin(py3 + obstacleLength, y, y + sideLength)) { // Y
         // Respawn del nuevo obstaculo 
@@ -339,7 +402,8 @@ function draw() {
       }
     }
   }
-  if (score > 19) {
+  // Al llegar a 12 puntos tiene en cuenta el 4º obstaculo
+  if (score > 11) {
     if (isWithin(px4, x, x + sideLength) || isWithin(px4 + obstacleLength, x, x + sideLength)) { // X
       if (isWithin(py4, y, y + sideLength) || isWithin(py4 + obstacleLength, y, y + sideLength)) { // Y
         // Respawn del nuevo obstaculo 
@@ -349,52 +413,59 @@ function draw() {
       }
     }
   }
+
   // Cuando choca con el cuadrado Jugador 2
-  if (isWithin(targetX, x2, x2 + sideLength) || isWithin(targetX + targetLength, x2, x2 + sideLength)) { // X
-    if (isWithin(targetY, y2, y2 + sideLength) || isWithin(targetY + targetLength, y2, y2 + sideLength)) { // Y
-      // Respawn del nuevo cuadrado
-      moveTarget();
-      // Añadimos un punto
-      score2++;
-    }
-  }
-  if (score2 > 4) {
-    if (isWithin(px, x2, x2 + sideLength) || isWithin(px + obstacleLength, x2, x2 + sideLength)) { // X
-      if (isWithin(py, y2, y2 + sideLength) || isWithin(py + obstacleLength, y2, y2 + sideLength)) { // Y
-        // Respawn del nuevo obstaculo
-        moveObstacle();
-        // Restamos un punto
-        score2--;
+  if (jugador2 == true) {
+    if (isWithin(targetX, x2, x2 + sideLength) || isWithin(targetX + targetLength, x2, x2 + sideLength)) { // X
+      if (isWithin(targetY, y2, y2 + sideLength) || isWithin(targetY + targetLength, y2, y2 + sideLength)) { // Y
+        // Respawn del nuevo cuadrado
+        moveTarget();
+        // Añadimos un punto
+        score2++;
       }
     }
-  }
-  if (score2 > 9) {
-    if (isWithin(px2, x2, x2 + sideLength) || isWithin(px2 + obstacleLength, x2, x2 + sideLength)) { // X
-      if (isWithin(py2, y2, y2 + sideLength) || isWithin(py2 + obstacleLength, y2, y2 + sideLength)) { // Y
-        // Respawn del nuevo obstaculo
-        moveObstacle2();
-        // Restamos un punto
-        score2--;
+    // Al llegar a 3 puntos tiene en cuenta el 1er obstaculo
+    if (score > 2 || score2 > 2) {
+      if (isWithin(px, x2, x2 + sideLength) || isWithin(px + obstacleLength, x2, x2 + sideLength)) { // X
+        if (isWithin(py, y2, y2 + sideLength) || isWithin(py + obstacleLength, y2, y2 + sideLength)) { // Y
+          // Respawn del nuevo obstaculo
+          moveObstacle();
+          // Restamos un punto
+          score2--;
+        }
       }
     }
-  }
-  if (score2 > 14) {
-    if (isWithin(px3, x2, x2 + sideLength) || isWithin(px3 + obstacleLength, x2, x2 + sideLength)) { // X
-      if (isWithin(py3, y2, y2 + sideLength) || isWithin(py4 + obstacleLength, y2, y2 + sideLength)) { // Y
-        // Respawn del nuevo obstaculo
-        moveObstacle3();
-        // Restamos un punto
-        score2--;
+    // Al llegar a 6 puntos tiene en cuenta el 2º obstaculo
+    if (score > 5 || score2 > 5) {
+      if (isWithin(px2, x2, x2 + sideLength) || isWithin(px2 + obstacleLength, x2, x2 + sideLength)) { // X
+        if (isWithin(py2, y2, y2 + sideLength) || isWithin(py2 + obstacleLength, y2, y2 + sideLength)) { // Y
+          // Respawn del nuevo obstaculo
+          moveObstacle2();
+          // Restamos un punto
+          score2--;
+        }
       }
     }
-  }
-  if (score2 > 19) {
-    if (isWithin(px4, x2, x2 + sideLength) || isWithin(px4 + obstacleLength, x2, x2 + sideLength)) { // X
-      if (isWithin(py4, y2, y2 + sideLength) || isWithin(py4 + obstacleLength, y2, y2 + sideLength)) { // Y
-        // Respawn del nuevo obstaculo
-        moveObstacle4();
-        // Restamos un punto
-        score2--;
+    // Al llegar a 9 puntos tiene en cuenta el 3er obstaculo
+    if (score > 8 || score2 > 8) {
+      if (isWithin(px3, x2, x2 + sideLength) || isWithin(px3 + obstacleLength, x2, x2 + sideLength)) { // X
+        if (isWithin(py3, y2, y2 + sideLength) || isWithin(py4 + obstacleLength, y2, y2 + sideLength)) { // Y
+          // Respawn del nuevo obstaculo
+          moveObstacle3();
+          // Restamos un punto
+          score2--;
+        }
+      }
+    }
+    // Al llegar a 12 puntos tiene en cuenta el 4º obstaculo
+    if (score > 11 || score2 > 11) {
+      if (isWithin(px4, x2, x2 + sideLength) || isWithin(px4 + obstacleLength, x2, x2 + sideLength)) { // X
+        if (isWithin(py4, y2, y2 + sideLength) || isWithin(py4 + obstacleLength, y2, y2 + sideLength)) { // Y
+          // Respawn del nuevo obstaculo
+          moveObstacle4();
+          // Restamos un punto
+          score2--;
+        }
       }
     }
   }
@@ -411,39 +482,57 @@ function draw() {
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
 
-  if(jugador2 == true){
-    if (score > 4 || score > 4)  {
+  // Dibujar obstaculos 2 jugadores
+  if (jugador2 == true) {
+    // Al llegar a 3 puntos crea el 1er obstaculo
+    if (score > 2 || score2 > 2) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px, py, obstacleLength, obstacleLength);
+      moveObstacles1Yup();
     }
-    if (score > 9 || score > 9)  {
+    // Al llegar a 6 puntos crea el 2º obstaculo
+    if (score > 5 || score2 > 5) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px2, py2, obstacleLength, obstacleLength);
+      moveObstacles2Xleft();
     }
-    if (score > 14 || score > 14)  {
+    // Al llegar a 9 puntos crea el 3er obstaculo
+    if (score > 8 || score2 > 8) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px3, py3, obstacleLength, obstacleLength);
+      moveObstacles3Ydown();
     }
-    if (score > 19 || score > 19) {
+    // Al llegar a 12 puntos crea el 4º obstaculo
+    if (score > 11 || score2 > 11) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px4, py4, obstacleLength, obstacleLength);
+      moveObstacles4Xright();
     }
-  }else{
-    if (score > 4) {
+  } else {
+    // Crear obstaculos 1 jugador
+    // Al llegar a 3 puntos crea el 1er obstaculo
+    if (score > 2) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px, py, obstacleLength, obstacleLength);
+      moveObstacles1Yup();
     }
-    if (score > 9) {
+    // Al llegar a 6 puntos crea el 2º obstaculo
+    if (score > 5) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px2, py2, obstacleLength, obstacleLength);
+      moveObstacles2Xleft();
     }
-    if (score > 19) {
+    // Al llegar a 9 puntos crea el 3er obstaculo
+    if (score > 8) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px3, py3, obstacleLength, obstacleLength);
+      moveObstacles3Ydown();
     }
-    if (score > 19) {
+    // Al llegar a 12 puntos crea el 4º obstaculo
+    if (score > 11) {
       context.fillStyle = '#FFFF00';
       context.fillRect(px4, py4, obstacleLength, obstacleLength);
+      moveObstacles4Xright();
     }
   }
 
@@ -454,7 +543,9 @@ function draw() {
     context.font = '24px Arial';
     context.textAlign = 'center';
     context.fillText('Puntuacion: ' + score, 80, 24);
+    if(tiempo == true){
     context.fillText('Tiempo Restante: ' + countdown, canvas.width / 2, 50);
+    }
     context.fillText('Puntuacion: ' + score2, canvas.width - 80, 24);
   } else {
     // 1 Jugador
@@ -462,12 +553,27 @@ function draw() {
     context.font = '24px Arial';
     context.textAlign = 'left';
     context.fillText('Puntuacion: ' + score, 10, 24);
+    if(tiempo == true){
     context.fillText('Tiempo Restante: ' + countdown, 10, 50);
+    }
   }
   // Si llega a 0 se acaba el juego sino sigue
-  if (countdown <= 0) {
-    endGame();
-  } else {
-    window.requestAnimationFrame(draw);
+  // Por tiempo
+  if(tiempo == true){
+    if (countdown <= 0) {
+      endGame();
+    } else {
+      // Ejecuta el juego
+      window.requestAnimationFrame(draw);
+    }
+  }
+  // Por puntos
+  if(puntos == true){
+    if (score == maxscore || score2 == maxscore) {
+      endGame();
+    } else {
+      // Ejecuta el juego
+      window.requestAnimationFrame(draw);
+    }
   }
 }
