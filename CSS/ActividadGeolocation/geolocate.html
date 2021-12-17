@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <style>
+        #mapa {
+            width: 1200px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Haz click para mostrar el mapa</p>
+
+    <button onclick="iniciarMapa()">Obtener</button>
+
+    <p id="coord"></p>
+
+    <div id="mapa"></div>
+
+    <script>
+        // Variable p donde escribimos informacion
+        var coord = document.getElementById("coord");
+        // Variable div con nuestro mapa
+        var mapa = document.getElementById("mapa")
+        // Variables de ubicacion
+        var latitud;
+        var longitud;
+
+        // Funcion para localizar tu ubicacion
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarPosicion, mostrarErrores);
+            } else {
+                // Muestra que tu navegador no soporta maps
+                coord.innerHTML = "Geolocalizacion no esta soportada por tu navegador.";
+            }
+        }
+
+        // Funcion que guarda en variables nuestra ubiacion actual
+        function mostrarPosicion(posicion) {
+            latitud = posicion.coords.latitude;
+            longitud = posicion.coords.longitude;
+        }
+
+        // Errores que se muestran si no permitimos o no puede coger nuestra ubicacion
+        function mostrarErrores(error) {
+            switch (error.code) {
+                // No hemos permitido ubicacion
+                case error.PERMISSION_DENIED:
+                    coord.innerHTML = "Debes permitir ver la ubacion en tu navegador"
+                    break;
+                // No se ha podido localizar la ubicacion
+                case error.POSITION_UNAVAILABLE:
+                    coord.innerHTML = "No se ha podido localizar tu ubicacion"
+                    break;
+                // Se ha acabado el tiempo para localizar la ubicacion
+                case error.TIMEOUT:
+                    coord.innerHTML = "La peticion para localizar tu ubicacion a caducado"
+                    break;
+                // Error que no esta en la lista de errores
+                case error.UNKNOWN_ERROR:
+                    coord.innerHTML = "Ha ocurrido un error no previsto"
+                    break;
+            }
+        }
+
+        // Funciones dentro del mapa
+        var map, marker1, marker2, marker3, marker4, marker5;
+
+        // Funcion para crear el mapa
+        function myMap() {
+
+            // Crea nuestro mapa con centro en nuestra ubicacion
+            map = new google.maps.Map(mapa, {
+                center: {
+                    lat: latitud,
+                    lng: longitud
+                },
+                zoom: 11,
+            })
+            // Marca de nuestra ubicacion
+            marker1 = new google.maps.Marker({
+                position: {
+                    lat: latitud,
+                    lng: longitud
+                },
+                map: map,
+                title: "Ubicacion Actual",
+                animation: google.maps.Animation.BOUNCE
+            });
+            // Marcas de las otras ubicaciones
+            marker2 = new google.maps.Marker({
+                position: {
+                    lat: 39.498327990415426,
+                    lng: 2.503131032874986
+                },
+                map: map,
+                title: "Instituto son ferrer",
+            });
+            marker3 = new google.maps.Marker({
+                position: {
+                    lat: 39.533034600466124,
+                    lng: 2.7295293331862456
+                },
+                map: map,
+                title: "Palma Aquarium",
+            });
+            marker4 = new google.maps.Marker({
+                position: {
+                    lat: 39.61781346911613,
+                    lng: 2.704806318637846
+                },
+                map: map,
+                title: "Alcampo",
+            });
+            marker5 = new google.maps.Marker({
+                position: {
+                    lat: 39.64174963523615,
+                    lng: 2.644086559778583
+                },
+                map: map,
+                title: "UIB",
+            });
+            marker5 = new google.maps.Marker({
+                position: {
+                    lat: 39.69568846298136,
+                    lng: 2.7004507415716903
+                },
+                map: map,
+                title: "Bunyola",
+            });
+        }
+
+        //Funcion para mostrar el mapa y los datos
+        function iniciarMapa(){
+            coord.innerHTML = "Latitude: " + latitud +
+                "<br>Longitude: " + longitud;
+            myMap();
+        }
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqIX_hsyb342QXbh6gJpzNYJBpLiqVLtY&callback=getLocation">
+    </script>
+</body>
+
+</html>
