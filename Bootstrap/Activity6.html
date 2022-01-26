@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY-4 (BOOTSTRAP)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/58a9273ff1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-secondary" href="#">Mysite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ml-5">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="#">Page 1</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="#">Page 2</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="#">Page 3</a>
+                </li>
+                <li class="nav-item ml-5">
+                    <form class="form-inline">
+                        <button class="btn btn-danger" type="button">Button</button>
+                    </form>
+                </li>
+                <li class="nav-item ml-5">
+                    <form class="form-inline" action="#">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cities">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li class="nav-item ml-5">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Submit</button>
+                    </form>
+                </li>
+                <li class="nav-item ml-5 mt-2 mb-n2">
+                    <p class="text-secondary">Some text...</p>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="font-weight-bold text-center text-dark">Bootstrap Navigation Bar</h1>
+                <p class="mt-4 text-justify mx-auto">A navigation bar is a navigation header that is placed at the
+                    top of the page. With Bootstrap, a
+                    navigation bar can
+                    extend or collapse, depending on the screen size.A standard navigation bar is created with
+                    <mark class="alert-danger text-danger font-weight-bold">
+                        &lt;nav class="navbar
+                        navbar-default"&gt;
+                    </mark>
+                </p>
+                <hr>
+                <p>
+                    The &lt;nav&gt; tag defines a set of navigation links. Notice that NOT all links of a document
+                    should be inside a &lt;nav&gt;
+                    element. The &lt;nav&gt; element is intended only for major block of navigation links.
+                    <mark>
+                        Browsers,such as
+                        <strong>screen readers for disabled users,</strong>
+                        can use this element to determine whether to omit the initial rendering of this content.
+                    </mark>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <p class="col-lg-6">
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapse" role="button"
+                            aria-expanded="false" aria-controls="collapse">
+                            My Text
+                        </a>
+                    </p>
+                    <div class="collapse col-lg-12 mb-4" id="collapse">
+                        <div class="card card-body bg-secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut malesuada leo. Praesent vel
+                            turpis et mauris facilisis maximus. Praesent faucibus faucibus semper. Morbi consectetur, sem eu
+                            vulputate euismod, lorem libero commodo lorem, vel ultricies lectus ipsum iaculis orci. Etiam
+                            accumsan sodales nulla a lobortis. Donec quis varius ante, a congue diam.
+                        </div>
+                    </div>
+                    <p class="col-lg-6">
+                        <a class="btn btn-primary" data-toggle="modal" href="#modal" role="button">
+                            Click me
+                        </a>
+                        <div class="modal fade" id="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title font-weight-bold h3" id="modal">A title for my modal</h5>
+                                </div>
+                                <div class="modal-body">
+                                  Some text goes in here
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                     </p>  
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
