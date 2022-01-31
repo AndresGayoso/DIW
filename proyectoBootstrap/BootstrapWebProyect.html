@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Andres</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/58a9273ff1.js" crossorigin="anonymous"></script>
+  <style>
+    #textgallery {
+      color: green;
+      font-size: 150%;
+    }
+
+    #descript {
+      color: blue;
+      font-size: 150%;
+    }
+
+    #services {
+      color: red;
+      font-size: 150%;
+    }
+
+    #textgallery {
+      padding-top: 10%;
+    }
+
+    #bed {
+      color: purple;
+      font-size: 150%;
+    }
+
+    #opinion {
+      color: black;
+      font-size: 150%;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5">
+    <a class="navbar-brand text-uppercase font-weight-bold" href="#">
+      <img
+        src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png"
+        width="50" height="50" alt="">
+      Hotel Andres
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">Informacion</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#gallery">Galeria</a>
+            <a class="dropdown-item" href="#info">Descripcion</a>
+            <a class="dropdown-item" href="#rooms">Habitaciones</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a style="color: black;" class="nav-link" href="#opiniones">Opiniones</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: black;" class="nav-link" href="#contacto" data-toggle="modal"
+            data-target=#contacto>Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="pb-5 col-lg-12 col-md-12 col-sm-12 col-12">
+        <h3 class="text-uppercase text-center text-dark font-weight-bold"><i id="textgallery"
+            class="pr-2 fas fa-images"></i>Galeria</h3>
+        <div id="gallery" class="carousel slide carousel-fade" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="5000">
+              <img src="https://www.bhmpics.com/download/bellagio_las_vegas_hotels-1600x900.jpg" class="d-block w-100"
+                alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Entrada Hotel</h5>
+                <p>Una fachada iluminada que hace que nuestro hotel sea de los mas bonitos </p>
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="5000">
+              <img src="https://www.wallpapertip.com/wmimgs/15-157010_ibiza-chill-out-bar.jpg" class="d-block w-100"
+                alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Terraza Hotel</h5>
+                <p>Una terraza con unas vistas muy bonitas</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="5000">
+              <img src="https://f.vividscreen.info/soft/a631ca54b691b9f274438e048f2a72c4/Hotel-Room-1600x900.jpg"
+                class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Habitacion hotel</h5>
+                <p>Vemos un comedor y cocina bastante amplio y lujoso</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#gallery" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#gallery" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="contactoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactoLabel">Contacto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="Email">Email:</label>
+              <input class="form-control w-50" type="email" name="Email" id="Email">
+            </div>
+            <div class="form-group">
+              <label for="motivo">Escribe el motivo por el que contactas(breve):</label>
+              <input class="form-control" type="text" name="motivo" id="motivo">
+            </div>
+            <div class="form-group">
+              <label for="texto">Exponga su duda o problema:</label>
+              <textarea class="form-control" name="texto" id="texto" rows="5"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" id="info">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <h3 class="pt-5 text-uppercase text-center text-dark font-weight-bold"><i id="descript"
+            class="pr-2 fas fa-info-circle"></i>Descripcion</h3>
+        <h5 class="text-justify">
+          El Gran Hotel Andres de 5 estrellas está ubicado en Mallorca, en la zona de Son Ferrer, entre palamanova y
+          calvia, con la fachada principal orientada al mar Mediterráneo, ofreciendo espectaculares vistas a la playa de
+          Calvia y a 5 minutos de los supermecado y centros comerciales de Magaluf. Se considera la obra cumbre del
+          arquitecto Fernando Guerrero Strachan, que tras cinco años en construcción, fue inaugurado en 1926 por el rey
+          Alfonso XIII con el nombre Hotel Sebastian. Posteriormente, a partir del 1936 fue hospital en la guerra civil
+          española. En el 1939 volvió a retomar sus orígenes, en este caso bajo el sobre nombre del Hotel Andres
+          concluyendo su operativa para este fin en el 1967, para convertirse entre los años 1987 y 2007 en palacio de
+          la justicia. Este bello edificio histórico acogió ilustres huéspedes de la realeza europea, del mundo de la
+          cultura y de la burguesía española.
+        </h5>
+      </div>
+    </div>
+    <h3 class="pt-5 text-uppercase text-center text-dark font-weight-bold"><i id="services"
+        class="pr-2 fas fa-concierge-bell"></i>Servicios</h3>
+    <div class="pt-2 row">
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-wifi"></i>Wifi gratis</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-swimming-pool"></i>Piscina</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-spa"></i>Spa</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-parking"></i>Parking</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-fan"></i>Aire acondicionado</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-utensils"></i>Restaurante</h5>
+      </div>
+    </div>
+    <div class="pt-2 row">
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-dumbbell"></i>Gimnasio</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-paw"></i>Permite mascotas</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-hand-holding-water"></i>Anti-Covid</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-soap"></i>Lavadora</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-medkit"></i>Medico</h5>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <h5 class="text-center"><i class="pr-2 fas fa-glass-cheers"></i>Discoteca</h5>
+      </div>
+    </div>
+    <div></div>
+    <h3 class="pt-5 text-uppercase text-center text-dark font-weight-bold"><i id="bed"
+        class="pr-2 fas fa-bed"></i>Habitaciones</h3>
+    <div class="pt-5 row">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card" id="rooms">
+          <img class="card-img-top rounded"
+            src="https://29ashk18iy1k13cu02aryna1-wpengine.netdna-ssl.com/wp-content/uploads/sites/46/2019/06/Chambre-simple-4-600x400.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Habitacion Individual</h5>
+            <p class="card-text">Capacidad: 1 persona</p>
+            <p>Camas: 1 individual</p>
+            <p>Valoracion
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">9.5</div>
+              </div>
+              </p>
+            <button type="button" class="btn btn-primary" id="toastbtn1">Reservar</button>
+            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+              <div id="toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+                data-delay="2000">
+                <div class="toast-header">
+                  <img width="30" height="30"
+                    src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png"
+                    class="rounded mr-2" alt="...">
+                  <strong class="mr-auto">Reserva realizada</strong>
+                  <small>0 seconds ago</small>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="toast-body">
+                  Has reservado la habitacion individual
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card">
+          <img class="card-img-top rounded"
+            src="https://www.hotelnewfolias.com/cache/2c/e3/2ce32cd715501a8eb589e7fcf050357f.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Habitacion Doble</h5>
+            <p class="card-text">Capacidad: 2 personas</p>
+            <p>Camas: 2 individuales</p>
+            <p>Valoracion
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">8</div>
+            </div>
+            </p>
+            <button type="button" class="btn btn-primary" id="toastbtn2">Reservar</button>
+            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+              <div id="toast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+                data-delay="5000">
+                <div class="toast-header">
+                  <img width="30" height="30"
+                    src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png"
+                    class="rounded mr-2" alt="...">
+                  <strong class="mr-auto">Reserva realizada</strong>
+                  <small>0 seconds ago</small>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="toast-body">
+                  Has reservado la habitacion doble
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card">
+          <img class="card-img-top rounded"
+            src="https://images.mirai.com/INFOROOMS/100376449/QByNlCMsAr4v3KQOraua/QByNlCMsAr4v3KQOraua_large.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Habitacion Doble Extra</h5>
+            <p class="card-text">Capacidad: 2/3 personas</p>
+            <p>Camas: 1 Matrimonial</p>
+            <p>Valoracion
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">10</div>
+              </div>
+              </p>
+            <button type="button" class="btn btn-primary" id="toastbtn3">Reservar</button>
+            <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+              <div id="toast3" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+                data-delay="5000">
+                <div class="toast-header">
+                  <img width="30" height="30"
+                    src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png"
+                    class="rounded mr-2" alt="...">
+                  <strong class="mr-auto">Reserva realizada</strong>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="toast-body">
+                  Has reservado la habitacion doble extra
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="pt-5 text-uppercase text-center text-dark font-weight-bold"><i class="pr-2 fas fa-users"></i>Opiniones</h3>
+  <div class="container">
+    <div class="pt-5 row">
+      <a class="btn btn-primary" data-toggle="collapse" href="#opiniones" role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Opiniones
+      </a>
+      <div class="col-12">
+        <div class="collapse" id="opiniones">
+          <div class="pt-2 media">
+            <img width="80" class="mr-3" src="https://www.uchile.cl/image/f129253-2-l.jpeg"
+              alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0">Antonio Mellado</h5>
+              Hotel con vistas preciosas y el servicio maravilloso, yo le doy un 8.5.
+              <div class="media mt-3">
+                <a class="pr-3" href="#">
+                  <img width="80" src="https://i.blogs.es/71d561/ian-goodfellow/200_200.jpg"
+                    alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                  <h5 class="mt-0">Alfonso Torres</h5>
+                  Las habitaciones perfectas, mejor de lo que me esperaba y un servicio execelent, yo le doy un 9.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media pt-3">
+            <img width="80" class="mr-3"
+              src="https://img.remediosdigitales.com/b929f4/duncan_chapple_horizontal/200_200.jpg"
+              alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0">Fernando Alonso</h5>
+              Hotel con buena ubicacion y muy bien servicio, yo le doy un 10.
+              <div class="media mt-3">
+                <a class="pr-3" href="#">
+                  <img width="80" src="https://www.enae.es/sites/default/files/testimonios/086b7e1.jpg"
+                    alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                  <h5 class="mt-0">Kerry Koppo Jhon</h5>
+                  Las habitaciones estan bien pero no me ha gustado el servicio
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $("#toastbtn1").click(function () {
+        $('#toast1').toast('show');
+      });
+    });
+    $(document).ready(function () {
+      $("#toastbtn2").click(function () {
+        $('#toast2').toast('show');
+      });
+    });
+    $(document).ready(function () {
+      $("#toastbtn3").click(function () {
+        $('#toast3').toast('show');
+      });
+    });
+  </script>
+</body>
+
+</html>
