@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Handling Attributes-8</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Every time you click on a paragraph, add or remove the 'highlight' class.  -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+            $("p").click(function(){
+                $(this).toggleClass("highlight")
+            })
+		});
+	</script>
+
+	<style type="text/css">
+		p {margin: 4px; font-size: 16px; font-weight: bolder;}
+		.blue {color: blue;}
+		.highlight {background-color: yellow;}
+	</style>
+</head>
+<body>
+	<p class="blue">click to toggle</p>
+	<p class="blue highlight">highlight</p>
+	<p class="blue">on these</p>
+	<p class="blue">paragraphs</p>
+</body>
+</html>

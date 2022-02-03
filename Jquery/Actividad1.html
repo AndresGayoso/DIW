@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ACTIVITY 3</title>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Click on the buttons to hide the div where button is located -->
+
+    <style>
+        div {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>TÍTULO</h1>
+    <div class="div1">
+        <button class="button1">Escóndeme</button>
+        <p>1.- Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea
+            commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.</p>
+    </div>
+    <br>
+    <div class="div2">
+        <button class="button2">Escóndeme</button>
+        <p>2.- Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea
+            commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.</p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".button1").click(function () {
+                $(".div1").hide();
+            });
+        });
+        $(document).ready(function () {
+            $(".button2").click(function () {
+                $(".div2").hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
