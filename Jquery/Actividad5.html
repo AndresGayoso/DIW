@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>ACTIVITY 4</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("input:button").click(function(){
+				let value = $("#pattern").val();
+				let filtro = RegExp(value,"gi");
+				var $div = $("div").html();
+				$div = $div.replace(filtro, `<span id="filter">${value}</span>`);
+				$("div").html($div);
+			})
+		});
+	</script>
+
+	<style type="text/css">
+		span {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<label for="pattern">Find: </label>
+	<input id="pattern" type="text" />
+	<input type="button" value="FIND" />
+
+	<div>
+		<p>jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery is the most popular JavaScript library in use today, with installation on 65% of the top 10 million highest-trafficked sites on the Web. jQuery is free, open-source software licensed under the MIT License.</p>
+
+		<p>jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications. jQuery also provides capabilities for developers to create plug-ins on top of the JavaScript library. This enables developers to create abstractions for low-level interaction and animation, advanced effects and high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful dynamic web pages and Web applications.</p>
+
+		<p>The set of jQuery core features—DOM element selections, traversal and manipulation—enabled by its selector engine (named "Sizzle" from v1.3), created a new "programming style", fusing algorithms and DOM data structures. This style influenced the architecture of other JavaScript frameworks like YUI v3 and Dojo, later stimulating the creation of the standard Selectors API.</p>
+
+		<p>Microsoft and Nokia bundle jQuery on their platforms. Microsoft includes it with Visual Studio for use within Microsoft's ASP.NET AJAX and ASP.NET MVC frameworks while Nokia has integrated it into the Web Run-Time widget development platform. jQuery has also been used in MediaWiki since version 1.16.</p>
+	</div>
+</body>
+</html>
