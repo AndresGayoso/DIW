@@ -11,7 +11,7 @@
 				let value = $("#pattern").val();
 				let filtro = RegExp(value,"gi");
 				var $div = $("div").html();
-				$div = $div.replace(filtro, `<span id="filter">${value}</span>`);
+				$div = $div.replace(filtro, `<span>${value}</span>`);
 				$("div").html($div);
 			})
 		});
