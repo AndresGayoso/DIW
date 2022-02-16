@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.hover {
+    display: inline-block;
+    position: relative;
+    color: lightskyblue;
+}
+
+.hover:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: lightskyblue;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
