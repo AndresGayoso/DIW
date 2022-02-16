@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+andd open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                $(".select").click(function Select() {
+                    let tr = $(this).parents("tr")[0]
+                    $(tr).toggleClass("highlight")
+                    $(this).html() == "Select" ? $(this).html("Deselect") : $(this).html(
+                        "Select")
+                })
+                $(".delete").click(function Delete() {
+                    let tr = $(this).parents("tr")[0]
+                    $(tr).hide();
+                })
+                $(".update").click(function Update() {
+                    let tr = $(this).parent().parent()
+                    $("#position").val(tr.children()[0].innerHTML)
+                    $("#team").val(tr.children()[1].innerHTML)
+                    $("#points").val(tr.children()[2].innerHTML)
+                    $("#insertButton").html("Update")
+                })
+                $("#insertButton").click(function () {
+                    if ($(this).html() == "Update") {
+                        let posicion = $("#position").val()
+                        let tr = document.getElementsByTagName("tr")[posicion]
+                        tr.children[1].innerHTML = $("#team").val()
+                        tr.children[2].innerHTML = $("#points").val()
+                        $("#insertButton").html("Insert")
+                        $("input:text").val("")
+                    } else if ($(this).html() == "Insert") {
+                        let tr = document.getElementsByTagName("tr")[1]
+                        let clone = $(tr).clone().appendTo("tbody");
+                        let posicion = document.getElementsByTagName("tr").length - 1
+                        $("tr:last").children()[0].innerHTML = posicion;
+                        $("tr:last").children()[1].innerHTML = $("#team").val();
+                        $("tr:last").children()[2].innerHTML = $("#points").val();
+                        $("input:text").val("")
+                    }
+                })
+            })
+    </script>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 15px;
+        }
+
+        #equipos {
+            border: 1px solid black;
+            padding: 15px;
+            width: 100%;
+        }
+
+        #editar {
+            border: 1px solid black;
+            padding: 15px;
+        }
+
+        div:not(#botonesEdit) {
+            display: table-cell;
+        }
+
+        #botonesEdit {
+            height: 50px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="equipos">
+        <div>
+            <table id="tabla">
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Options</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Real Mallorca</td>
+                    <td>90</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Real Madrid</td>
+                    <td>85</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Valladolid</td>
+                    <td>72</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Getafe</td>
+                    <td>70</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Valencia</td>
+                    <td>69</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>Levante</td>
+                    <td>68</td>
+                    <td>
+                        <button class="select">Select</button>
+                        <button class="delete">Delete</button>
+                        <button class="update">Update</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="editar">
+            <form autocomplete="off">
+                <input type="hidden" name="row" id="row" value="">
+                Position:<br><input type="text" id="position" value="" required><br>
+                Team:<br><input type="text" id="team" value="" required><br>
+                Points:<br><input type="text" id="points" value="" required><br>
+            </form>
+            <div id="botonesEdit">
+                <button id="insertButton" type="submit">Insert</button>
+                <button id="cancelButton">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

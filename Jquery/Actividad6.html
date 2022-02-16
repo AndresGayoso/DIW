@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Manipulating the DOM</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!--  Setting or returning one or more style properties for selected elements -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			Animacion('div:eq(0)');
+			Animacion('div:eq(1)');
+			Animacion('div:eq(2)');
+			Animacion('div:eq(3)');
+			let puntuacion = 0;
+			$("div").click(function(){
+				$(this).hide();
+				puntuacion++;
+				document.getElementById("result").innerHTML = `Tu puntuacion es de ${puntuacion} puntos`
+			})
+			document.getElementById("result").innerHTML = `Tu puntuacion es de ${puntuacion} puntos`
+		});
+
+		function Posicion() {
+
+			var height = $(window).height() - 50;
+			var width = $(window).width() - 50;
+
+			var randomH = Math.floor(Math.random() * height);
+			var randomW = Math.floor(Math.random() * width);
+
+			return [randomH, randomW];
+
+		}
+
+		function Animacion(cuadrado) {
+			var p = Posicion();
+			$(cuadrado).animate({
+				top: p[0],
+				left: p[1]
+			}, 1000, function () {
+				Animacion(cuadrado);
+			});
+
+		};
+
+	</script>
+
+	<style type="text/css">
+		div {
+			width: 60px;
+			height: 60px;
+			margin: 5px;
+			position: fixed;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="result">&nbsp;</p>
+	<div style="background-color: blue;"></div>
+	<div style="background-color: green;"></div>
+	<div style="background-color: yellow;"></div>
+	<div style="background-color: #f11;"></div>
+</body>
+
+</html>
