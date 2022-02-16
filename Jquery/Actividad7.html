@@ -13,32 +13,33 @@ andd open the template in the editor.
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-                $(".select").click(function Select() {
-                    let tr = $(this).parents("tr")[0]
-                    $(tr).toggleClass("highlight")
-                    $(this).html() == "Select" ? $(this).html("Deselect") : $(this).html(
-                        "Select")
-                })
-                $(".delete").click(function Delete() {
-                    let tr = $(this).parents("tr")[0]
-                    $(tr).hide();
-                })
-                $(".update").click(function Update() {
-                    let tr = $(this).parent().parent()
-                    $("#position").val(tr.children()[0].innerHTML)
-                    $("#team").val(tr.children()[1].innerHTML)
-                    $("#points").val(tr.children()[2].innerHTML)
-                    $("#insertButton").html("Update")
-                })
-                $("#insertButton").click(function () {
-                    if ($(this).html() == "Update") {
-                        let posicion = $("#position").val()
-                        let tr = document.getElementsByTagName("tr")[posicion]
-                        tr.children[1].innerHTML = $("#team").val()
-                        tr.children[2].innerHTML = $("#points").val()
-                        $("#insertButton").html("Insert")
-                        $("input:text").val("")
-                    } else if ($(this).html() == "Insert") {
+            $(document).on("click", ".select", function () {
+                let tr = $(this).parents("tr")[0]
+                $(tr).toggleClass("highlight")
+                $(this).html() == "Select" ? $(this).html("Deselect") : $(this).html(
+                    "Select")
+            })
+            $(document).on("click", ".delete", function () {
+                let tr = $(this).parents("tr")[0]
+                $(tr).hide();
+            })
+            $(document).on("click", ".update", function () {
+                let tr = $(this).parent().parent()
+                $("#position").val(tr.children()[0].innerHTML)
+                $("#team").val(tr.children()[1].innerHTML)
+                $("#points").val(tr.children()[2].innerHTML)
+                $("#insertButton").html("Update")
+            })
+            $("#insertButton").click(function () {
+                if ($(this).html() == "Update") {
+                    let posicion = $("#position").val()
+                    let tr = document.getElementsByTagName("tr")[posicion]
+                    tr.children[1].innerHTML = $("#team").val()
+                    tr.children[2].innerHTML = $("#points").val()
+                    $("#insertButton").html("Insert")
+                    $("input:text").val("")
+                } else if ($(this).html() == "Insert") {
+                    if ($("#team").val() != "" && $("#points").val() != "") {
                         let tr = document.getElementsByTagName("tr")[1]
                         let clone = $(tr).clone().appendTo("tbody");
                         let posicion = document.getElementsByTagName("tr").length - 1
@@ -47,8 +48,9 @@ andd open the template in the editor.
                         $("tr:last").children()[2].innerHTML = $("#points").val();
                         $("input:text").val("")
                     }
-                })
+                }
             })
+        })
     </script>
     <style>
         table,
