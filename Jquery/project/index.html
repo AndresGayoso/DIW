@@ -17,43 +17,246 @@
         type="text/css" />
     <script src="colorpicker-master/jquery.colorpicker.js"></script>
     <link href="colorpicker-master/jquery.colorpicker.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/58a9273ff1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script>
-        $(function () {
-            $('#colorpicker').colorpicker({
-                modal: true
-            });
-        });
-        $(document).on("click", ".ui-colorpicker-ok", function () {
-            document.body.style.backgroundColor = "#" + $("#colorpicker").val()
-            $("#colorpicker").val("")
-        })
-    </script>
+    <script src="index.js"></script>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<body data-spy="scroll" data-target="#navbar" data-offset="170">
+    <!--Start navbar-->
+    <nav id="navbar" class="fixed-top navbar-fixed-top navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand m-0" href="#"><img class="bg-dark rounded" width="50" height="50"
                 src="https://pbs.twimg.com/profile_images/1247183406/recetas_de_cocina_400x400.jpg" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
             aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!--Start nav-links-->
         <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mx-auto text-dark text-underline-offset">
+            <ul class="ulnav mx-auto navbar-nav text-dark text-underline-offset">
                 <li class="nav-item hover">
-                    <a class="nav-link" href="#">Informacion</a>
+                    <a class="nav-link" href="#gallery">Galeria</a>
                 </li>
                 <li class="nav-item hover">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="#recipe">Recetas</a>
                 </li>
                 <li class="nav-item hover">
-                    <a class="nav-link" href="#">Diseños</a>
+                    <a class="nav-link" href="#coment">Comentarios</a>
                 </li>
             </ul>
-            <input id="colorpicker" type="text" placeholder="Selecciona un color" />
         </div>
+        <!--End nav-links-->
+        <!--Plugin choose color-->
+        <input id="colorpicker" type="text" placeholder="Selecciona un color" />
     </nav>
+    <!--End navbar-->
+    <!--Start hide/show nav arrow-->
+    <div class="triangle-down center">
+        <p>
+            <i class="fa fa-chevron-down fa-2x isDown" id="toggle"></i>
+        </p>
+    </div>
+    <!--End hide/show nav arrow-->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="pb-5 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h3 class="text-uppercase text-center text-dark font-weight-bold"><i id="textgallery"
+                            class="pr-2 fas fa-images"></i>Galeria</h3>
+                <!--Start carousel-->
+                    <div id="gallery" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                        <!--Start carousel first--> 
+                            <div class="carousel-item active" data-interval="5000">
+                                <img src="https://img2.rtve.es/i/?w=1600&i=1602856555364.jpg" class="d-block w-100"
+                                    alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Paella</h5>
+                                    <p>Aprende a hacer una paella de manera facil</p>
+                                </div>
+                            </div>
+                        <!--End carousel first--> 
+                        <!--Start carousel second-->
+                            <div class="carousel-item" data-interval="5000">
+                                <img src="https://images.ecestaticos.com/0Trm1Z7rLqL_iAe821gTHPVl_pw=/0x111:2120x1301/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Ffbd%2F267%2F78e%2Ffbd26778e7cc8b01015152cf1ca51cd9.jpg"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Caracoles</h5>
+                                    <p>Aprende a cocinar una receta facil y sencilla de caracoles al vapor</p>
+                                </div>
+                            </div>
+                        <!--End carousel second--> 
+                        <!--Start carousel third-->
+                            <div class="carousel-item" data-interval="5000">
+                                <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/hamburger-food_39005_600x450.jpg?w=1600&h=900"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Hamburguesa completa</h5>
+                                    <p>Facil de hacer con pocos ingredientes y poco tiempo</p>
+                                </div>
+                            </div>
+                        <!--End carousel thrid-->    
+                        </div>
+                    <!--Start controls gallery-->
+                        <button class="carousel-control-prev" type="button" data-target="#gallery" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-target="#gallery" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </button>
+                    <!--End controlss galler-->
+                    </div>
+                <!--End carousel-->
+                </div>
+            </div>
+        </div>
+        <div class="pt-5 container">
+            <div id="recipe" class="row">
+                <div class="pb-4 col-12">
+                    <h3 class="text-uppercase text-center text-dark font-weight-bold"><i
+                            class="pr-2 fas fa-utensils"></i>Recetas</fas>
+                    </h3>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <!--Start card-->
+                    <div class="card" id="rooms">
+                    <!--Card image-->
+                        <img class="card-img-top rounded"
+                            src="https://fuentesmar.es/wp-content/uploads/2021/01/SALMON-LOMOS.jpg"
+                            alt="Card image cap">
+                        <div class="collapse" id="recipe1">
+                        <!--Start card body-->
+                            <div class="card-body">
+                                <h5 class="card-title">Salmon al horno (2 personas)</h5>
+                                <ul>
+                                    <li>2 Salmon fresco lomo</li>
+                                    <li>80g mayonesa</li>
+                                    <li>1 clara de huevo</li>
+                                    <li>0.5 diente de ajo</li>
+                                    <li>1 limon</li>
+                                    <li>sal al gusto</li>
+                                </ul>
+                                <p><strong>Dificultat:</strong> facil</p>
+                                <p><strong>Tiempo total:</strong> 20 minutos</p>
+                            </div>
+                        <!--End card body-->
+                        </div>
+                    <!--Start Collapse-->
+                        <p class="mt-2 mx-auto">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#recipe1" role="button"
+                                aria-expanded="false" aria-controls="recipe1">
+                                Ingredientes
+                            </a>
+                        </p>
+                    <!--End Collapse-->
+                    </div>
+                <!--End card-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <!--Start card-->
+                    <div class="card" id="rooms">
+                    <!--Card image-->
+                        <img class="card-img-top rounded"
+                            src="https://www.larazon.es/resizer/vPpFLglquHV1IIJy92RVwc-YbTI=/600x400/smart/filters:format(webp):quality(65)/cloudfront-eu-central-1.images.arcpublishing.com/larazon/JJN6NFEE25EJLNVOOLBNGSWWKE.jpg"
+                            alt="Card image cap">
+                        <div class="collapse" id="recipe2">
+                        <!--Start card body-->
+                            <div class="card-body">
+                                <h5 class="card-title">Snadwich mixto o bikini (2 personas)</h5>
+                                <ul>
+                                    <li>4 rebanadas de pan de molde</li>
+                                    <li>un poco de matequilla</li>
+                                    <li>4 lonchas de queso cremoso</li>
+                                    <li>6 lonchas de jamon cocido</li>
+                                </ul>
+                                <p><strong>Dificultat:</strong> facil</p>
+                                <p><strong>Tiempo total:</strong> 10 minutos</p>
+                            </div>
+                        <!--End card body-->
+                        </div>
+                    <!--Start Collapse-->
+                        <p class="mt-2 mx-auto">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#recipe2" role="button"
+                                aria-expanded="false" aria-controls="recipe2">
+                                Ingredientes
+                            </a>
+                        </p>
+                    <!--End Collapse-->
+                    </div>
+                <!--End card-->
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <!--Start card-->
+                    <div class="card" id="rooms">
+                    <!--Card image-->
+                        <img class="card-img-top rounded"
+                            src="https://t1.uc.ltmcdn.com/images/1/5/5/se_puede_congelar_la_pasta_50551_600.jpg"
+                            alt="Card image cap">
+                        <div class="collapse" id="recipe3">
+                        <!--Start card body-->
+                            <div class="card-body">
+                                <h5 class="card-title">Pasta fresca casera (3 personas)</h5>
+                                <ul>
+                                    <li>300g de semola rimacinata o harina comun</li>
+                                    <li>3 huevos medianos</li>
+                                    <li>1 cucharadita de sal fina</li>
+                                </ul>
+                                <p><strong>Dificultat:</strong> facil</p>
+                                <p><strong>Tiempo total:</strong> 50 minutos</p>
+                            </div>
+                        <!--End card body-->
+                        </div>
+                    <!--Start Collapse-->
+                        <p class="mt-2 mx-auto">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#recipe3" role="button"
+                                aria-expanded="false" aria-controls="recipe3">
+                                Ingredientes
+                            </a>
+                        </p>
+                    <!--End Collapse-->
+                    </div>
+                <!--End card-->
+                </div>
+            </div>
+        </div>
+        <!-- Start Container Form/Comments-->
+        <div class="pt-5 container">
+            <div class="row" id="coment">
+                <div class="col-12">
+                    <h3 class="text-uppercase text-center text-dark font-weight-bold"><i
+                            class="pr-2 fas fa-comment">Comentarios</i></h3>
+        <!--Start Form-->
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Username:</label>
+                            <input type="text" class="w-25 form-control" id="nombre"
+                                placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                        </div>
+                    </form>
+                    <button id="cmedia" class="btn btn-primary">Post Comment</button>
+        <!--End form-->            
+                </div>
+        <!--Start Comments-->
+                <div class="newComments">
+
+                </div>
+        <!--End Comments-->
+            </div>
+        </div>
+        <!-- End Container Form/Comments-->
+    </div>
+    </div>
 </body>
 
 </html>

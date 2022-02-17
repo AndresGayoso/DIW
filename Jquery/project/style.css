@@ -28,3 +28,49 @@ body {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+.brand {
+    letter-spacing: 4px;
+    border-top: 4px solid white;
+    transition: border-top 0.3s;
+}
+.brand:hover {
+    border-top: 4px solid dodgerblue;
+}
+.brand:hover {
+    border-top: 4px solid dodgerblue;
+}
+
+.triangle-down {
+    position: fixed;
+    margin-top: 65px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid black;
+}
+.triangle-down p {
+    text-align: center;
+    color: grey;
+    margin-top: -33px;
+    margin-left: -13px;
+    transition: color 0.2s;
+}
+.triangle-down p:hover {
+    color: white;
+    cursor: pointer;
+}
+.center {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8%;
+}
+.ulnav{
+    padding-left: 160px;    
+}
+
+#content{
+    margin-top:120px;
+}
